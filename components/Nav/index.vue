@@ -24,13 +24,12 @@
         >
       </div>
       <div class="flex w-full items-center justify-between md:w-auto">
-        <a class="w-28" href="/">
+        <a href="/">
           <img
             alt="Logo"
-            width="132"
-            height="52"
             decoding="async"
-            src="/logo.svg"
+            class="w-40"
+            src="/full-logo-tr.webp"
         /></a>
       </div>
       <div
