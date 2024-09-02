@@ -1,8 +1,7 @@
 export default {
   target: "static",
-  server: {
-    port: process.env.PORT || 8080,
-  },
+  server: { port: process.env.PORT || 8080 },
+  generate: { interval: 50 },
   head: {
     title: "cholozai",
     meta: [
@@ -12,7 +11,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
       {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",

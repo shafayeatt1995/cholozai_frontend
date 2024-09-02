@@ -1,4 +1,5 @@
 require("dotenv").config();
+import axios from "axios";
 
 export const state = () => ({
   apiUrl: process.env.API_URL,
@@ -27,8 +28,8 @@ export const actions = {
   },
   async fetchNavbarData({ commit, state }) {
     try {
-      const data = await this.$axios.$get(`${state.apiUrl}/fetch/navbar`);
-      commit("setNavbarData", data);
+      const res = await axios.get(`${state.apiUrl}/fetch/navbar`);
+      commit("setNavbarData", res.data);
     } catch (error) {
       console.error("Failed to fetch navbar data:", error);
     }

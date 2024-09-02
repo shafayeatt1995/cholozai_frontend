@@ -21,7 +21,7 @@ export default {
   name: "DarkMode",
   data() {
     return {
-      selectedTheme: "system",
+      selectedTheme: "light",
     };
   },
   watch: {
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     setInitialTheme() {
-      const savedTheme = localStorage.getItem("theme") || "system";
+      const savedTheme = localStorage.getItem("theme") || "light";
       this.selectedTheme = savedTheme;
       this.applyTheme(savedTheme);
     },
@@ -48,7 +48,6 @@ export default {
       } else if (theme === "light") {
         document.documentElement.classList.remove("dark");
       } else if (theme === "system") {
-        // Auto-detect based on system preference
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)"
         ).matches;
