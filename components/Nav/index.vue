@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white/50 backdrop-blur-md sticky top-0 z-10">
+  <div
+    class="dark:bg-gray-900/50 bg-white/50 backdrop-blur-md sticky top-0 z-10"
+  >
     <div class="container mx-auto py-5 lg:py-2">
       <div class="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
         <div
@@ -7,12 +9,12 @@
         >
           <nuxt-link
             :to="{ name: 'index' }"
-            class="px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 dark:text-gray-400"
+            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             >Home</nuxt-link
           >
-          <div class="relative text-left">
+          <div class="relative text-left" v-click-outside="() => (show = '')">
             <button
-              class="flex px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 gap-2 items-center"
+              class="flex px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500 gap-2 items-center"
               type="button"
               :class="
                 show === 'travel' ? 'text-blue-500' : 'dark:text-gray-400'
@@ -34,8 +36,8 @@
                     class=""
                   >
                     <a
-                      class="flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4 text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300 hover:bg-gray-100 rounded-md transition-all duration-200"
-                      href="/"
+                      class="flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4 text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md transition-all duration-200"
+                      href="#"
                       ><span> {{ division.name }}</span></a
                     >
                   </div>
@@ -44,15 +46,15 @@
             </transition>
           </div>
           <a
-            class="px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 dark:text-gray-400"
+            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             target=""
             rel=""
-            href="/contact"
+            href="#"
             >Popular Places</a
           >
         </div>
         <div class="flex w-full items-center justify-between md:w-auto">
-          <a href="/">
+          <a href="#">
             <img
               alt="Logo"
               decoding="async"
@@ -63,27 +65,25 @@
         <div
           class="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row"
         >
-          <a
-            class="px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 dark:text-gray-400"
-            target=""
-            rel=""
-            href="/archive"
+          <nuxt-link
+            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
+            :to="{ name: 'blog-page-page', params: { page: 1 } }"
           >
-            Blog</a
+            Blog</nuxt-link
           >
           <a
-            class="px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 dark:text-gray-400"
+            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             target="_blank"
             rel="noopener"
-            href="https://stablo-pro.web3templates.com/"
+            href="#"
           >
             Hotel & Resort</a
           >
           <a
-            class="px-5 py-2 text-sm font-medium text-gray-800 hover:text-blue-500 dark:text-gray-400"
+            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             target="_blank"
             rel="noopener"
-            href="https://stablo-pro.web3templates.com/"
+            href="#"
           >
             Contact Us</a
           >
@@ -94,9 +94,11 @@
 </template>
 
 <script>
+import vClickOutside from "v-click-outside";
 import { mapGetters } from "vuex";
 export default {
   name: "Nav",
+  directives: { clickOutside: vClickOutside.directive },
   data() {
     return {
       show: "",

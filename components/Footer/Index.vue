@@ -1,9 +1,14 @@
 <template>
-  <div
-    class="container px-8 mx-auto xl:px-5 max-w-screen-lg py-5 lg:py-8 mt-10 border-t border-gray-100 dark:border-gray-800"
-  >
-    <div class="text-center text-sm">
-      Copyright © 2024 cholozai.com. All rights reserved.
+  <div class="px-8 xl:px-5 py-5 lg:py-8 mt-10">
+    <hr />
+    <div class="container mx-auto">
+      <div class="flex pt-5 lg:pt-8 justify-between">
+        <div></div>
+        <div class="text-center text-sm">
+          Copyright © 2024 cholozai.com. All rights reserved.
+        </div>
+        <DarkMode />
+      </div>
     </div>
   </div>
 </template>

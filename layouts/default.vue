@@ -1,10 +1,9 @@
 <template>
-  <div class="dark:bg-slate-900">
+  <div class="dark:bg-slate-900 dark:text-white">
     <div class="selection:bg-blue-600 selection:text-white">
       <Nav />
       <div class="mt-2"></div>
       <Nuxt />
-      <div class="mt-5"></div>
       <Footer />
       <WindowWidth />
     </div>

@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <div
       class="grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3"
-      v-if="posts.length"
+      v-if="posts && posts.length"
     >
       <BlogSinglePost
         v-for="(post, key) in posts"
@@ -14,7 +14,10 @@
       <div ref="empty" class="h-96"></div>
       <h1 class="text-3xl font-bold">No Blog post found</h1>
     </div>
-    <div class="mt-10 flex items-center justify-center" v-if="posts.length">
+    <div
+      class="mt-10 flex items-center justify-center"
+      v-if="posts && posts.length"
+    >
       <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm">
         <button
           v-if="pageNumber == 1"
@@ -33,7 +36,7 @@
           <span>Previous</span>
         </nuxt-link>
         <nuxt-link
-          v-if="posts.length === 18"
+          v-if="posts && posts.length === 18"
           :to="{ name: 'blog-page-page', params: { page: pageNumber + 1 } }"
           class="relative flex items-center gap-1 rounded-r-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
         >

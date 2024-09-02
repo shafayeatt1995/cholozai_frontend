@@ -3,14 +3,17 @@
     <div
       class="overflow-hidden rounded-md bg-gray-100 transition-all duration-200 hover:scale-105 dark:bg-gray-800"
     >
-      <a class="relative block aspect-video" href="#">
+      <nuxt-link
+        class="relative block aspect-video"
+        :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+      >
         <nuxt-img
           :src="`/images/blog/${post.image}`"
           :alt="post.title"
           format="webp"
           class="object-cover transition-all"
           loading="lazy"
-          decode="async"
+          decoding="async"
           style="
             position: absolute;
             height: 100%;
@@ -19,41 +22,35 @@
             color: transparent;
           "
         />
-      </a>
+      </nuxt-link>
     </div>
     <div>
       <div class="flex gap-3 justify-between">
-        <a href="/category/technology">
-          <span
-            class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-600"
-            >{{ post.district }}</span
-          >
-        </a>
+        <span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-600"
+          >{{ post.district }}</span
+        >
       </div>
       <h2
         class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"
       >
-        <a
-          href="/post/architectural-engineering-wonders-of-the-modern-era-for-your-inspiration"
+        <nuxt-link
+          :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
         >
           <span
             class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900"
             >{{ post.title }}</span
           >
-        </a>
+        </nuxt-link>
       </h2>
       <div
         class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400"
       >
-        <a href="/author/mario-sanchez">
-          <div class="flex items-center gap-3">
-            <span class="truncate text-sm">Shafayet Al-Anik</span>
-          </div>
-        </a>
+        <div class="flex items-center gap-3">
+          <span class="truncate text-sm">Shafayet Al-Anik</span>
+        </div>
         <span class="text-xs text-gray-300 dark:text-gray-600">•</span>
-        <time class="truncate text-sm" datetime="2022-10-21T15:48:00.000Z">{{
-          post.postDate | cDate
-        }}</time>
+        <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
       </div>
     </div>
   </div>

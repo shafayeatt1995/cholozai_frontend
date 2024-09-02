@@ -15,6 +15,7 @@
     "core-js": "^3.25.3",
     "dotenv": "^16.4.5",
     "nuxt": "^2.15.8",
+    "v-click-outside": "^3.2.0",
     "vue-slide-up-down": "^2.0.1",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
