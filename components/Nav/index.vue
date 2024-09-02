@@ -12,7 +12,7 @@
             class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             >Home</nuxt-link
           >
-          <div class="relative text-left" v-click-outside="() => (show = '')">
+          <div class="relative text-left">
             <button
               class="flex px-5 py-2 text-sm font-medium dark:text-white hover:text-blue-500 gap-2 items-center"
               type="button"
@@ -28,8 +28,9 @@
             </button>
             <transition name="fade" mode="out-in">
               <div
-                class="z-20 origin-top-left rounded-md focus:outline-none lg:absolute lg:left-0 lg:top-[58px] lg:w-56 shadow-lg dark:bg-gray-800 bg-white"
+                class="z-20 origin-top-left rounded-md focus:outline-none lg:absolute lg:left-0 lg:top-[58px] lg:w-48 shadow-lg dark:bg-gray-800 bg-white"
                 v-if="show === 'travel'"
+                v-click-outside="() => (show = '')"
               >
                 <div class="px-2 py-1">
                   <div v-for="division in divisions" :key="division.name">
@@ -46,13 +47,41 @@
               </div>
             </transition>
           </div>
-          <a
-            class="px-5 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
-            target=""
-            rel=""
-            href="#"
-            >Popular Places</a
-          >
+          <div class="relative text-left">
+            <button
+              class="flex px-5 py-2 text-sm font-medium dark:text-white hover:text-blue-500 gap-2 items-center"
+              type="button"
+              :class="
+                show === 'district'
+                  ? 'text-blue-500'
+                  : 'text-gray-800 dark:text-gray-400'
+              "
+              @click="show = show === 'district' ? '' : 'district'"
+            >
+              <span>District of Bangladesh</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <transition name="fade" mode="out-in">
+              <div
+                class="z-20 origin-top-left rounded-md focus:outline-none lg:absolute lg:left-0 lg:top-[58px] lg:w-[600px] shadow-lg dark:bg-gray-800 bg-white"
+                v-if="show === 'district'"
+                v-click-outside="() => (show = '')"
+              >
+                <div class="px-2 py-1 grid lg:grid-cols-4 md:grid-cols-2">
+                  <div v-for="district in districts" :key="district.name">
+                    <nuxt-link
+                      class="flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4 text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md transition-all duration-200"
+                      :to="{
+                        name: 'district-name-page',
+                        params: { name: district.name, page: 1 },
+                      }"
+                      ><span> {{ district.name }}</span></nuxt-link
+                    >
+                  </div>
+                </div>
+              </div>
+            </transition>
+          </div>
         </div>
         <div class="flex w-full items-center justify-between md:w-auto">
           <a href="#">
@@ -106,7 +135,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["divisions"]),
+    ...mapGetters(["divisions", "districts"]),
   },
   watch: {
     $route() {

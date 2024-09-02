@@ -13,8 +13,8 @@ export const mutations = {
   },
   setNavbarData(state, data) {
     const { districts, divisions } = data;
-    state.districts = districts;
-    state.divisions = divisions;
+    state.districts = districts.sort((a, b) => a.name.localeCompare(b.name));
+    state.divisions = divisions.sort((a, b) => a.name.localeCompare(b.name));
   },
 };
 

@@ -6,11 +6,15 @@
       <div class="mx-auto max-w-screen-md">
         <div class="flex justify-center">
           <div class="flex gap-3">
-            <p
-              class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-emerald-700"
+            <nuxt-link
+              class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-700"
+              :to="{
+                name: 'district-name-page',
+                params: { name: post.district, page: 1 },
+              }"
             >
               {{ post.district }}
-            </p>
+            </nuxt-link>
           </div>
         </div>
         <h1
