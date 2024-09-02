@@ -98,7 +98,7 @@ export default {
         error({ statusCode: 404, message: "Not found" });
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       const { error } = context;
       error({
         statusCode: 500,
