@@ -19,6 +19,11 @@ export default {
     ],
     script: [
       {
+        type: "text/javascript",
+        src: `/js/gtag.js`,
+        head: true,
+      },
+      {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
         body: true,
@@ -33,7 +38,11 @@ export default {
 
   css: ["~/assets/css/main.scss"],
 
-  plugins: ["@/plugins/filter.js", "@/plugins/slide.js"],
+  plugins: [
+    "@/plugins/filter.js",
+    "@/plugins/slide.js",
+    { src: "@/plugins/gtag.js", mode: "client" },
+  ],
 
   components: true,
 
