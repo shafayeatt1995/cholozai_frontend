@@ -14,6 +14,7 @@
           height="225"
           format="webp"
           class="object-cover transition-all"
+          fit="cover"
           style="
             position: absolute;
             height: 100%;

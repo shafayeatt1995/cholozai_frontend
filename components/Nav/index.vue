@@ -14,6 +14,7 @@
           class="w-[160px] h-[65px]"
           src="/full-logo-tr.webp"
           format="webp"
+          fit="cover"
         />
       </nuxt-link>
       <div
@@ -109,6 +110,7 @@
               alt="Logo"
               width="240"
               height="98"
+              fit="cover"
               class="w-[160px] h-[65px]"
               src="/full-logo-tr.webp"
           /></nuxt-link>

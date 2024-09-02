@@ -74,9 +74,9 @@ export default {
 
   components: true,
 
-  buildModules: ["@nuxtjs/tailwindcss", "@/modules/generator"],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@/modules/generator"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/sitemap"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/sitemap"],
 
   sitemap: {
     hostname: "https://cholozai.com",
