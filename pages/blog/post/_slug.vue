@@ -50,10 +50,8 @@
         "
       />
     </div>
-    <div
-      class="container px-8 mx-auto xl:px-5 max-w-screen-lg py-5 lg:py-8 flex"
-    >
-      <div class="w-[160px]">
+    <div class="container p-4 mx-auto flex">
+      <div class="w-[160px] hidden md:block">
         <div class="sticky top-24 w-full"></div>
       </div>
       <div class="flex-1">
@@ -77,7 +75,7 @@
           <hr v-if="key + 1 !== post.content.length" />
         </div>
       </div>
-      <div class="w-[160px]">
+      <div class="w-[160px] hidden md:block">
         <div class="sticky top-24 w-full"></div>
       </div>
     </div>

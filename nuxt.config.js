@@ -17,6 +17,15 @@ export default {
         href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
       },
     ],
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
+        async: true,
+      },
+      {
+        src: "https://cholozai.com/js/analytics.js",
+      },
+    ],
   },
 
   css: ["~/assets/css/main.scss"],
