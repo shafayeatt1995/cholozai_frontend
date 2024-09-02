@@ -21,9 +21,12 @@ export default {
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
+        body: true,
       },
       {
-        src: "https://cholozai.com/js/analytics.js",
+        type: "text/javascript",
+        src: `/js/analytics.js`,
+        body: true,
       },
     ],
   },
