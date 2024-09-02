@@ -48,9 +48,17 @@ export default {
 
   components: true,
 
-  buildModules: ["@nuxtjs/tailwindcss"],
+  buildModules: ["@nuxtjs/tailwindcss", "@/modules/generator"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image", "@nuxtjs/sitemap"],
+
+  sitemap: {
+    hostname: "https://cholozai.com",
+    path: "/sitemap.xml",
+    gzip: true,
+    exclude: [],
+    defaults: { changefreq: "daily", priority: 1, lastmod: new Date() },
+  },
 
   image: {
     screens: {
