@@ -26,9 +26,13 @@
     </div>
     <div>
       <div class="flex gap-3 justify-between">
-        <span
+        <nuxt-link
+          :to="{
+            name: 'district-name-page',
+            params: { name: post.district, page: 1 },
+          }"
           class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-600"
-          >{{ post.district }}</span
+          >{{ post.district }}</nuxt-link
         >
       </div>
       <h2
