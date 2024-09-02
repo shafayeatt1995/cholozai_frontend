@@ -7,8 +7,10 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
+      {
+        name: "google-site-verification",
+        content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
