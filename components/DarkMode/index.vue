@@ -1,20 +1,9 @@
 <template>
-  <div class="inline-flex items-end gap-2">
-    <i
-      class="fa-regular fa-moon dark:text-white"
-      v-if="selectedTheme === 'dark'"
-    ></i>
-    <i class="fa-regular fa-sun" v-else-if="selectedTheme === 'light'"></i>
-    <label for="darkMode"> </label>
-    <select
-      id="darkMode"
-      class="rounded-md dark:bg-gray-900 dark:text-white"
-      v-model="selectedTheme"
-    >
-      <option value="system">System</option>
-      <option value="dark">Dark</option>
-      <option value="light">Light</option>
-    </select>
+  <div>
+    <label class="switch">
+      <input type="checkbox" v-model="isDarkMode" hidden />
+      <span class="slider"></span>
+    </label>
   </div>
 </template>
 
@@ -23,12 +12,12 @@ export default {
   name: "DarkMode",
   data() {
     return {
-      selectedTheme: "light",
+      isDarkMode: false,
     };
   },
   watch: {
-    selectedTheme() {
-      this.changeTheme();
+    isDarkMode(newValue) {
+      this.changeTheme(newValue);
     },
   },
   mounted() {
@@ -37,29 +26,65 @@ export default {
   methods: {
     setInitialTheme() {
       const savedTheme = localStorage.getItem("theme") || "light";
-      this.selectedTheme = savedTheme;
-      this.applyTheme(savedTheme);
+      this.isDarkMode = savedTheme === "dark";
+      this.applyTheme(this.isDarkMode);
     },
-    changeTheme() {
-      this.applyTheme(this.selectedTheme);
-      localStorage.setItem("theme", this.selectedTheme);
+    changeTheme(isDarkMode) {
+      const theme = isDarkMode ? "dark" : "light";
+      this.applyTheme(isDarkMode);
+      localStorage.setItem("theme", theme);
     },
-    applyTheme(theme) {
-      if (theme === "dark") {
+    applyTheme(isDarkMode) {
+      if (isDarkMode) {
         document.documentElement.classList.add("dark");
-      } else if (theme === "light") {
+      } else {
         document.documentElement.classList.remove("dark");
-      } else if (theme === "system") {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (prefersDark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
       }
     },
   },
 };
 </script>
+
+<style lang="scss">
+.switch {
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  position: relative;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f4f4f5;
+  border-radius: 1em;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 1.4em;
+  width: 1.4em;
+  background: linear-gradient(to top right, #ff0080, #ff8c00);
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+  left: 0.3em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input:checked + .slider {
+  background: #303136;
+}
+
+input:checked + .slider::before {
+  transform: translateX(calc(1.5em + 0.3em)) translateY(-50%);
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+</style>
