@@ -87,6 +87,7 @@ export default {
   },
 
   image: {
+    provider: "ipx",
     screens: {
       xs: 320,
       sm: 640,
