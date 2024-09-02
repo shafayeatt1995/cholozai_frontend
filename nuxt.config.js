@@ -11,18 +11,36 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+      },
+    ],
   },
 
   css: ["~/assets/css/main.scss"],
 
-  plugins: [],
+  plugins: ["@/plugins/filter.js", "@/plugins/slide.js"],
 
   components: true,
 
   buildModules: ["@nuxtjs/tailwindcss"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxt/image"],
+
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
+    },
+  },
 
   axios: {
     baseURL: "/",
