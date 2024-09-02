@@ -1,11 +1,14 @@
 <template>
   <div class="inline-flex items-center gap-2">
-    <i
-      class="fa-regular fa-moon dark:text-white"
-      v-if="selectedTheme === 'dark'"
-    ></i>
-    <i class="fa-regular fa-sun" v-else-if="selectedTheme === 'light'"></i>
+    <label for="darkMode">
+      <i
+        class="fa-regular fa-moon dark:text-white"
+        v-if="selectedTheme === 'dark'"
+      ></i>
+      <i class="fa-regular fa-sun" v-else-if="selectedTheme === 'light'"></i>
+    </label>
     <select
+      id="darkMode"
       class="rounded-md dark:bg-gray-900 dark:text-white"
       v-model="selectedTheme"
     >

@@ -8,6 +8,11 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
+        name: "description",
+        content:
+          "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
+      },
+      {
         name: "google-site-verification",
         content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
       },
