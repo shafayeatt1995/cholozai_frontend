@@ -7,8 +7,15 @@
         :to="{ name: 'index' }"
         class="md:hidden flex w-full items-center justify-center px-2"
       >
-        <img alt="Logo" decoding="async" class="w-40" src="/full-logo-tr.webp"
-      /></nuxt-link>
+        <nuxt-img
+          alt="Logo"
+          width="240"
+          height="98"
+          class="w-[160px] h-[65px]"
+          src="/full-logo-tr.webp"
+          format="webp"
+        />
+      </nuxt-link>
       <div
         class="flex justify-between items-center flex-nowrap md:gap-5 lg:gap-10 whitespace-nowrap overflow-y-visible"
         :class="show === '' ? 'overflow-x-auto ' : ''"
@@ -97,10 +104,12 @@
           class="hidden md:flex w-full items-center justify-between md:w-auto px-2 md:px-0"
         >
           <nuxt-link :to="{ name: 'index' }">
-            <img
+            <nuxt-img
+              format="webp"
               alt="Logo"
-              decoding="async"
-              class="w-40"
+              width="240"
+              height="98"
+              class="w-[160px] h-[65px]"
               src="/full-logo-tr.webp"
           /></nuxt-link>
         </div>

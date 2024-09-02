@@ -10,10 +10,10 @@
         <nuxt-img
           :src="`/images/blog/${post.image}`"
           :alt="post.title"
+          width="400"
+          height="225"
           format="webp"
           class="object-cover transition-all"
-          loading="lazy"
-          decoding="async"
           style="
             position: absolute;
             height: 100%;

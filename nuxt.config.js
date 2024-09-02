@@ -14,9 +14,35 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: true,
+      },
+      {
+        rel: "preload",
+        href: "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap",
+        as: "style",
+        onload: "this.onload=null;this.rel='stylesheet'",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap",
+        media: "print",
+        onload: "this.media='all'",
+      },
+      {
+        rel: "preload",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+        as: "style",
+        onload: "this.onload=null;this.rel='stylesheet'",
+      },
       {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+        media: "print",
+        onload: "this.media='all'",
       },
     ],
     script: [

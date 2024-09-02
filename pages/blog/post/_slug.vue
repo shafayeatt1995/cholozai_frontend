@@ -38,8 +38,6 @@
         :src="`/images/blog/${post.image}`"
         :alt="post.title"
         format="webp"
-        loading="lazy"
-        decoding="async"
         class="object-cover w-full"
         style="
           position: absolute;
