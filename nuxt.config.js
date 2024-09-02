@@ -57,7 +57,7 @@ export default {
     path: "/sitemap.xml",
     gzip: true,
     exclude: [],
-    defaults: { changefreq: "daily", priority: 1, lastmod: new Date() },
+    defaults: { changefreq: "monthly", priority: 1, lastmod: new Date() },
   },
 
   image: {
