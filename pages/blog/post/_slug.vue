@@ -77,6 +77,9 @@
           <h2 v-if="content.title" class="text-2xl font-bold mb-2">
             {{ content.title }}
           </h2>
+          <h2 v-else-if="key === 0" class="text-2xl font-bold mb-2 capitalize">
+            Introduction to {{ post.title }}
+          </h2>
           <article class="mb-10">
             <p
               v-for="(article, i) in content.content"

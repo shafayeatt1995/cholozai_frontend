@@ -6,7 +6,6 @@
       <nuxt-link
         class="relative block aspect-video"
         :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
-        target="_blank"
       >
         <nuxt-img
           :src="`/images/blog/${post.image}`"
@@ -50,12 +49,12 @@
         </nuxt-link>
       </h2>
       <div
-        class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400"
+        class="mt-3 flex items-center text-gray-500 dark:text-gray-400 gap-2"
       >
-        <div class="flex items-center gap-3">
+        <p class="flex items-center gap-1">
           <span class="truncate text-sm">Shafayet Al-Anik</span>
-        </div>
-        <span class="text-xs text-gray-300 dark:text-gray-600">•</span>
+        </p>
+        <p class="text-xs text-gray-300 dark:text-gray-600">•</p>
         <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
       </div>
     </div>
