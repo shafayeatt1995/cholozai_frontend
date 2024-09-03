@@ -84,6 +84,9 @@
 import axios from "axios";
 export default {
   name: "BlogPost",
+  head() {
+    return { title: `${this.post.title} | ${this.$pageTitle}` };
+  },
   async asyncData(context) {
     try {
       const { store, error, route } = context;

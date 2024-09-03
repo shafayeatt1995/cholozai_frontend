@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div
-      class="grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3"
+      class="grid gap-10 md:grid-cols-3 lg:gap-10"
       v-if="posts && posts.length"
     >
       <BlogSinglePost
@@ -62,6 +62,9 @@ import axios from "axios";
 import { initLottie } from "@/utils";
 export default {
   name: "BlogPage",
+  head() {
+    return { title: `Blog - Page ${this.page} | ${this.$pageTitle}` };
+  },
   async asyncData(context) {
     try {
       const { store, error, route } = context;
@@ -71,7 +74,7 @@ export default {
       let res = await axios.get(`${apiUrl}/fetch/posts/${page}`);
       if (res.data) {
         const { posts } = res.data;
-        return { posts };
+        return { posts, page };
       } else {
         error({ statusCode: 404, message: "Not found" });
       }
@@ -87,6 +90,7 @@ export default {
   data() {
     return {
       posts: [],
+      page: 1,
     };
   },
   computed: {

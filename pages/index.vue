@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
+    <div class="grid gap-10 md:grid-cols-3 lg:gap-10">
       <BlogSinglePost
         v-for="(post, key) in posts"
         :key="key + 'i'"
@@ -32,6 +32,9 @@
 import axios from "axios";
 export default {
   name: "IndexPage",
+  head() {
+    return { title: `Home | ${this.$pageTitle}` };
+  },
   async asyncData(context) {
     try {
       const { store, error } = context;

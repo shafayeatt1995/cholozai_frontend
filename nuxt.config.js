@@ -8,13 +8,49 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
+        name: "google-site-verification",
+        content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
+      },
+      {
         name: "description",
         content:
           "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
       },
       {
-        name: "google-site-verification",
-        content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
+        hid: "og:title",
+        property: "og:title",
+        content: "CholoZai - Your Ultimate Guide to Travel in Bangladesh",
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: `${process.env.BASE_URL}/og-image.webp`,
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: `${process.env.BASE_URL}/og-image.webp`,
+      },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: `summary_large_image`,
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: `CholoZai - Your Ultimate Guide to Travel in Bangladesh`,
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: `Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.`,
       },
     ],
     link: [
@@ -74,6 +110,7 @@ export default {
   plugins: [
     "@/plugins/filter.js",
     "@/plugins/slide.js",
+    "@/plugins/global-variable.js",
     { src: "@/plugins/gtag.js", mode: "client" },
   ],
 
