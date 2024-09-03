@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div
-      class="grid gap-10 md:grid-cols-3 lg:gap-10"
+      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
       v-if="posts && posts.length"
     >
       <BlogSinglePost
@@ -20,12 +20,15 @@
 
 <script>
 import axios from "axios";
-import { initLottie } from "@/utils";
+import { initLottie, meta } from "@/utils";
 export default {
   name: "BlogPage",
   head() {
+    const title = `${this.name} District - Page ${this.page} | ${this.$pageTitle}`;
+    const description = `Explore our ${this.name} district featuring insightful articles and guides. Discover top destinations, tips, and more. page number ${this.page}.`;
     return {
-      title: `${this.name} District - Page ${this.page} | ${this.$pageTitle}`,
+      title,
+      meta: meta({ title, description }),
     };
   },
   async asyncData(context) {

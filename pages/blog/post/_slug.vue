@@ -18,7 +18,7 @@
           </div>
         </div>
         <h1
-          class="text-brand-primary mb-3 mt-2 text-center text-3xl font-bold tracking-tight dark:text-white lg:text-4xl lg:leading-snug"
+          class="text-brand-primary mb-3 mt-2 text-center text-3xl font-bold tracking-tight dark:text-white lg:text-4xl lg:leading-snug capitalize"
         >
           {{ post.title }}
         </h1>
@@ -28,6 +28,22 @@
           <div class="flex items-center text-sm">
             <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
           </div>
+        </div>
+        <div class="flex justify-between items-center w-full" v-if="isDev">
+          <div>
+            <p @click="copyText(post._id)" class="cursor-pointer">
+              {{ post._id }}
+            </p>
+            <a :href="post.url" target="_blank">{{ post.url }}</a>
+          </div>
+          <form @submit.prevent="submit">
+            <input
+              type="text"
+              v-model="title"
+              class="border size-96 mt-10"
+              @click="paste"
+            />
+          </form>
         </div>
       </div>
     </div>
@@ -82,10 +98,19 @@
 
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
+import { meta } from "@/utils";
 export default {
   name: "BlogPost",
   head() {
-    return { title: `${this.post.title} | ${this.$pageTitle}` };
+    const title = `${this.post.title} | ${this.$pageTitle}`;
+    const description =
+      this.post?.content[0]?.content[0]?.split(".")?.slice(2)?.join(". ") ||
+      "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
+    return {
+      title,
+      meta: meta({ title, description }),
+    };
   },
   async asyncData(context) {
     try {
@@ -94,7 +119,7 @@ export default {
       const { apiUrl } = store.getters;
       const slug = params.slug;
       let res = await axios.get(`${apiUrl}/fetch/post/${slug}`);
-      if (res.data) {
+      if (res.data?.post) {
         const { post } = res.data;
         return { post };
       } else {
@@ -112,7 +137,29 @@ export default {
   data() {
     return {
       post: {},
+      title: "",
     };
+  },
+  computed: {
+    ...mapGetters(["isDev"]),
+  },
+  methods: {
+    copyText(text) {
+      navigator.clipboard.writeText(text);
+    },
+    async paste() {
+      this.title = await navigator.clipboard.readText();
+      this.submit();
+    },
+    async submit() {
+      try {
+        // await this.$axios.$post(`${this.$api}/scrap/update-post-slug`, {
+        //   title: this.title,
+        //   post: this.post,
+        // });
+        this.title = "";
+      } catch (error) {}
+    },
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div
-      class="grid gap-10 md:grid-cols-3 lg:gap-10"
+      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
       v-if="posts && posts.length"
     >
       <BlogSinglePost
@@ -59,11 +59,17 @@
 
 <script>
 import axios from "axios";
-import { initLottie } from "@/utils";
+import { initLottie, meta } from "@/utils";
 export default {
   name: "BlogPage",
   head() {
-    return { title: `Blog - Page ${this.page} | ${this.$pageTitle}` };
+    const title = `Blog - Page ${this.page} | ${this.$pageTitle}`;
+    const description = `Explore a diverse range of travel information on CholoZai. From travel tips and destination guides to cultural insights. page number ${this.page}.`;
+
+    return {
+      title,
+      meta: meta({ title, description }),
+    };
   },
   async asyncData(context) {
     try {

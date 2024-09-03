@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid gap-10 md:grid-cols-3 lg:gap-10">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
       <BlogSinglePost
         v-for="(post, key) in posts"
         :key="key + 'i'"
@@ -30,10 +30,14 @@
 
 <script>
 import axios from "axios";
+import { meta } from "@/utils";
 export default {
   name: "IndexPage",
   head() {
-    return { title: `Home | ${this.$pageTitle}` };
+    return {
+      title: `Home | ${this.$pageTitle}`,
+      meta: meta(),
+    };
   },
   async asyncData(context) {
     try {

@@ -44,8 +44,9 @@ export function validateDate(date, defaultDate) {
 
 export function strSlug(val) {
   return val
-    .toLowerCase()
-    .replace(/\s+/g, "_")
+    .toLowerCase() // Convert to lowercase
+    .replace(/[\s_]+/g, "-") // Replace spaces and underscores with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with a single hyphen
     .replace(/[^\w\-]/g, "");
 }
 
@@ -195,6 +196,19 @@ export function fullDateFormat(date = new Date()) {
     month: "short",
     year: "numeric",
   }).format(new Date(date));
+}
+
+export function meta({
+  title = "CholoZai - Your Ultimate Guide to Travel in Bangladesh",
+  description = "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
+} = {}) {
+  return [
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+  ];
 }
 
 export const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;

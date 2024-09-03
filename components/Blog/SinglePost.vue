@@ -6,6 +6,7 @@
       <nuxt-link
         class="relative block aspect-video"
         :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+        target="_blank"
       >
         <nuxt-img
           :src="`/images/blog/${post.image}`"
@@ -43,7 +44,7 @@
           :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
         >
           <span
-            class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900"
+            class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900 capitalize"
             >{{ post.title }}</span
           >
         </nuxt-link>

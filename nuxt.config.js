@@ -12,45 +12,28 @@ export default {
         content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
       },
       {
-        name: "description",
-        content:
-          "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
-      },
-      {
-        hid: "og:title",
-        property: "og:title",
-        content: "CholoZai - Your Ultimate Guide to Travel in Bangladesh",
-      },
-      {
-        hid: "og:description",
-        property: "og:description",
-        content:
-          "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
-      },
-      {
-        hid: "og:image",
         property: "og:image",
         content: `${process.env.BASE_URL}/og-image.webp`,
       },
       {
-        hid: "twitter:image",
+        property: "og:site_name",
+        content: `Cholozai`,
+      },
+      {
+        property: "og:url",
+        content: `https://cholozai.com`,
+      },
+      {
+        property: "og:type",
+        content: `website`,
+      },
+      {
         name: "twitter:image",
         content: `${process.env.BASE_URL}/og-image.webp`,
       },
       {
-        hid: "twitter:card",
         name: "twitter:card",
         content: `summary_large_image`,
-      },
-      {
-        hid: "twitter:title",
-        name: "twitter:title",
-        content: `CholoZai - Your Ultimate Guide to Travel in Bangladesh`,
-      },
-      {
-        hid: "twitter:description",
-        name: "twitter:description",
-        content: `Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.`,
       },
     ],
     link: [
