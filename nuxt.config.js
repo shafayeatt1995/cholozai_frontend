@@ -7,10 +7,7 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        name: "google-adsense-account",
-        content: "ca-pub-4198613489910321",
-      },
+      { name: "google-adsense-account", content: "ca-pub-4198613489910321" },
       {
         name: "google-site-verification",
         content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
@@ -19,26 +16,14 @@ export default {
         property: "og:image",
         content: `${process.env.BASE_URL}/og-image.webp`,
       },
-      {
-        property: "og:site_name",
-        content: `Cholozai`,
-      },
-      {
-        property: "og:url",
-        content: `https://cholozai.com`,
-      },
-      {
-        property: "og:type",
-        content: `website`,
-      },
+      { property: "og:site_name", content: `Cholozai` },
+      { property: "og:url", content: `https://cholozai.com` },
+      { property: "og:type", content: `website` },
       {
         name: "twitter:image",
         content: `${process.env.BASE_URL}/og-image.webp`,
       },
-      {
-        name: "twitter:card",
-        content: `summary_large_image`,
-      },
+      { name: "twitter:card", content: `summary_large_image` },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
