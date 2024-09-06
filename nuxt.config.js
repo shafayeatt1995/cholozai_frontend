@@ -79,10 +79,7 @@ export default {
 
   css: ["~/assets/css/main.scss"],
 
-  transition: {
-    name: "fade",
-    mode: "out-in",
-  },
+  transition: { name: "fade", mode: "out-in" },
 
   plugins: [
     "@/plugins/filter.js",
