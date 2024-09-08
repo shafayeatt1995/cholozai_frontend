@@ -56,9 +56,7 @@ export default {
     }
   },
   data() {
-    return {
-      posts: [],
-    };
+    return { posts: [] };
   },
 };
 </script>
