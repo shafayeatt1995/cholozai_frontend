@@ -13,15 +13,9 @@
           width="400"
           height="225"
           format="webp"
-          class="object-cover transition-all"
+          class="object-cover transition-all size-full"
           fit="cover"
-          style="
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            inset: 0px;
-            color: transparent;
-          "
+          loading="lazy"
         />
       </nuxt-link>
     </div>

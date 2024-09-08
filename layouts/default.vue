@@ -3,7 +3,9 @@
     <div class="selection:bg-blue-600 selection:text-white">
       <Nav />
       <div class="mt-2"></div>
-      <Nuxt />
+      <div class="px-2 md:px-0">
+        <Nuxt />
+      </div>
       <Footer />
       <WindowWidth />
     </div>

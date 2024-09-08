@@ -55,13 +55,7 @@
         :alt="post.title"
         format="webp"
         class="object-cover w-full"
-        style="
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          inset: 0px;
-          color: transparent;
-        "
+        loading="lazy"
       />
     </div>
     <div class="container p-4 mx-auto flex">
