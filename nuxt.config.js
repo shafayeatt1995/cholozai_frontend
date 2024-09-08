@@ -91,6 +91,7 @@ export default {
     "@/plugins/slide.js",
     "@/plugins/global-variable.js",
     { src: "@/plugins/gtag.js", mode: "client" },
+    { src: "@/plugins/load-js-after-load.js", mode: "client" },
   ],
 
   components: true,
