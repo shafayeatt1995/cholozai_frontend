@@ -1,7 +1,7 @@
 export default {
   target: "static",
   server: { port: process.env.PORT || 8080 },
-  generate: { interval: 100 },
+  generate: { interval: 100, fallback: true },
   head: {
     title: "cholozai",
     meta: [
