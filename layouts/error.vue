@@ -5,9 +5,6 @@
 <script>
 export default {
   name: "NotFound",
-  head() {
-    return { title: `404 Not Found - ${this.$pageTitle}` };
-  },
   async mounted() {
     initLottie(this.$refs.error, "/lottie/404.json");
   },
