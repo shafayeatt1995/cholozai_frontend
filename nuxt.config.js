@@ -125,6 +125,8 @@ export default {
     },
   },
 
+  router: { middleware: ["errorHandler"] },
+
   build: {
     analyze: !!process.env.ANALYZE,
     extend(config, ctx) {
