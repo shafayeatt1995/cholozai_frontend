@@ -62,16 +62,21 @@ export default {
       {
         type: "text/javascript",
         src: `/js/gtag.js`,
+        async: true,
+        defer: true,
         head: true,
       },
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
+        defer: true,
         body: true,
       },
       {
         type: "text/javascript",
         src: `/js/analytics.js`,
+        async: true,
+        defer: true,
         body: true,
       },
     ],
@@ -86,6 +91,7 @@ export default {
     "@/plugins/slide.js",
     "@/plugins/global-variable.js",
     { src: "@/plugins/gtag.js", mode: "client" },
+    { src: "@/plugins/load-js-after-load.js", mode: "client" },
   ],
 
   components: true,
@@ -140,6 +146,16 @@ export default {
         },
       },
     },
+    optimization: {
+      minimize: true,
+    },
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true,
+      components: true,
+    },
+    optimizeCSS: true,
     extractCSS: true,
   },
 };
