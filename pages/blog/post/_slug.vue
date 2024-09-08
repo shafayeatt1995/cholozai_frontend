@@ -55,7 +55,6 @@
         :alt="post.title"
         format="webp"
         class="object-cover w-full"
-        loading="lazy"
       />
     </div>
     <div class="container p-4 mx-auto flex">

@@ -15,7 +15,6 @@
           format="webp"
           class="object-cover transition-all size-full"
           fit="cover"
-          loading="lazy"
         />
       </nuxt-link>
     </div>

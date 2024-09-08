@@ -15,7 +15,6 @@
           src="/full-logo-tr.webp"
           format="webp"
           fit="cover"
-          loading="lazy"
         />
       </nuxt-link>
       <div
@@ -114,7 +113,6 @@
               fit="cover"
               class="w-[160px] h-[65px]"
               src="/full-logo-tr.webp"
-              loading="lazy"
           /></nuxt-link>
         </div>
         <div

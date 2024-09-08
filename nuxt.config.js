@@ -62,21 +62,16 @@ export default {
       {
         type: "text/javascript",
         src: `/js/gtag.js`,
-        async: true,
-        defer: true,
         head: true,
       },
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
-        defer: true,
         body: true,
       },
       {
         type: "text/javascript",
         src: `/js/analytics.js`,
-        async: true,
-        defer: true,
         body: true,
       },
     ],
@@ -91,7 +86,6 @@ export default {
     "@/plugins/slide.js",
     "@/plugins/global-variable.js",
     { src: "@/plugins/gtag.js", mode: "client" },
-    { src: "@/plugins/load-js-after-load.js", mode: "client" },
   ],
 
   components: true,
@@ -125,47 +119,11 @@ export default {
     baseURL: "/",
   },
 
-  // pwa: {
-  //   manifest: {
-  //     lang: "en",
-  //   },
-  // },
   pwa: {
     manifest: {
-      lang: "en", // Language setting for the manifest
-    },
-    workbox: {
-      // Enable offline support
-      offline: true,
-      // Customize caching strategies
-      runtimeCaching: [
-        // {
-        //   urlPattern: "/.*", // Caching static assets
-        //   handler: "CacheFirst", // Use cache-first strategy
-        //   strategyOptions: {
-        //     cacheName: "static-cache",
-        //     cacheExpiration: {
-        //       maxEntries: 100, // Limit the number of cache entries
-        //       maxAgeSeconds: 86400, // Cache for 1 day
-        //     },
-        //   },
-        // },
-        {
-          urlPattern: "/.*", // Cache all routes for offline usage
-          handler: "CacheFirst", // Use network-first strategy for pages
-          strategyOptions: {
-            cacheName: "pages-cache",
-            cacheExpiration: {
-              maxEntries: 1000, // Limit the number of cache entries
-              maxAgeSeconds: 60 * 60 * 24 * 30, // Cache for 10 minutes
-            },
-          },
-        },
-      ],
+      lang: "en",
     },
   },
-
-  router: { prefetchLinks: true },
 
   build: {
     analyze: !!process.env.ANALYZE,
@@ -182,16 +140,6 @@ export default {
         },
       },
     },
-    optimization: {
-      minimize: true,
-    },
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true,
-      components: true,
-    },
     extractCSS: true,
-    optimizeCSS: true,
   },
 };
