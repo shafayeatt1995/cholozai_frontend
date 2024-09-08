@@ -156,10 +156,10 @@ export default {
     },
     async submit() {
       try {
-        // await this.$axios.$post(`${this.$api}/scrap/update-post-slug`, {
-        //   title: this.title,
-        //   post: this.post,
-        // });
+        await this.$axios.$post(`${this.$api}/scrap/update-post-slug`, {
+          title: this.title,
+          post: this.post,
+        });
         this.title = "";
       } catch (error) {}
     },
