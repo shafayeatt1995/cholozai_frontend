@@ -34,7 +34,7 @@ import { initLottie } from "@/utils";
 export default {
   name: "NotFound",
   head() {
-    return { title: `404 - ${this.$pageTitle}` };
+    return { title: `404 Not Found - ${this.$pageTitle}` };
   },
   data() {
     return {};
