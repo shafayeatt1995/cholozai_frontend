@@ -40,7 +40,7 @@
             <input
               type="text"
               v-model="title"
-              class="border size-96 mt-10"
+              class="border w-full h-20 bg-blue-600 text-white mt-10"
               @click="paste"
             />
           </form>
@@ -57,15 +57,15 @@
         class="object-cover w-full"
       />
     </div>
-    <div class="container p-4 mx-auto flex">
-      <div class="w-[160px] hidden md:block">
+    <div class="container p-4 mx-auto flex flex-col lg:flex-row gap-5">
+      <!-- <div class="w-[160px] hidden md:block">
         <div class="sticky top-24 w-full"></div>
-      </div>
+      </div> -->
       <div class="flex-1">
         <div
           v-for="(content, key) in post.content"
           :key="`content-${key}`"
-          class="my-7"
+          class="mb-7"
         >
           <h2 v-if="content.title" class="text-2xl font-bold mb-2">
             {{ content.title }}
@@ -85,8 +85,20 @@
           <hr v-if="key + 1 !== post.content.length" />
         </div>
       </div>
-      <div class="w-[160px] hidden md:block">
+      <!-- <div class="w-[160px] hidden md:block">
         <div class="sticky top-24 w-full"></div>
+      </div> -->
+      <div class="lg:w-80">
+        <div class="lg:sticky top-24 w-full">
+          <h2 class="md:text-4xl text-2xl font-semibold mb-3">Related Post</h2>
+          <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
+            <BlogSinglePost
+              v-for="(post, key) in related"
+              :key="key + 'i'"
+              :post="post"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -116,8 +128,8 @@ export default {
       const slug = params.slug;
       let res = await axios.get(`${apiUrl}/fetch/post/${slug}`);
       if (res.data?.post) {
-        const { post } = res.data;
-        return { post };
+        const { post, related } = res.data;
+        return { post, related };
       } else {
         error({ statusCode: 404, message: "Not found" });
       }
@@ -133,6 +145,7 @@ export default {
   data() {
     return {
       post: {},
+      related: {},
       title: "",
     };
   },
@@ -149,10 +162,10 @@ export default {
     },
     async submit() {
       try {
-        await this.$axios.$post(`${this.$api}/scrap/update-post-slug`, {
-          title: this.title,
-          post: this.post,
-        });
+        // await this.$axios.$post(`${this.$api}/scrap/update-post-slug`, {
+        //   title: this.title,
+        //   post: this.post,
+        // });
         this.title = "";
       } catch (error) {}
     },

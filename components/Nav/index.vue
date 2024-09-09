@@ -2,10 +2,10 @@
   <div
     class="dark:bg-gray-900/50 bg-white/50 backdrop-blur-md sticky top-0 z-10"
   >
-    <div class="container mx-auto py-2">
+    <div class="container mx-auto py-1">
       <nuxt-link
         :to="{ name: 'index' }"
-        class="md:hidden flex w-full items-center justify-center px-2"
+        class="md:hidden flex w-full items-center justify-between px-2"
       >
         <nuxt-img
           alt="Logo"
@@ -16,13 +16,15 @@
           format="webp"
           fit="cover"
         />
+        <button class="p-2 text-2xl" @click="showMenu = !showMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </nuxt-link>
       <div
-        class="flex justify-between items-center flex-nowrap md:gap-5 lg:gap-10 whitespace-nowrap overflow-y-visible"
-        :class="show === '' ? 'overflow-x-auto ' : ''"
+        class="flex flex-col md:flex-row justify-between items-center flex-nowrap md:gap-5 lg:gap-10"
       >
         <div
-          class="order-1 w-full items-center justify-start md:order-none flex md:w-auto md:flex-1 md:justify-end"
+          class="order-1 w-full md:items-center justify-start md:order-none md:flex flex-col md:flex-row md:w-auto md:flex-1 md:justify-end"
           :class="showMenu ? '' : 'hidden'"
         >
           <nuxt-link
@@ -46,11 +48,11 @@
             </button>
             <transition name="fade" mode="out-in">
               <div
-                class="z-20 origin-top-left rounded-md focus:outline-none absolute left-0 top-11 md:top-[58px] w-48 shadow-lg dark:bg-gray-800 bg-white"
+                class="z-20 origin-top-left rounded-md focus:outline-none absolute left-0 top-11 md:top-[54px] w-full md:w-48 shadow-lg dark:bg-gray-800 bg-white"
                 v-if="show === 'travel'"
                 v-click-outside="() => (show = '')"
               >
-                <div class="px-2 py-1">
+                <div class="px-2 py-1 grid grid-cols-2 md:grid-cols-1">
                   <div v-for="division in divisions" :key="division.name">
                     <nuxt-link
                       class="flex items-center space-x-2 px-3 py-2 text-sm lg:space-x-4 text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md transition-all duration-200"
@@ -81,11 +83,13 @@
             </button>
             <transition name="fade" mode="out-in">
               <div
-                class="z-20 origin-top-left rounded-md focus:outline-none absolute left-0 top-11 md:top-[58px] w-72 lg:w-[600px] shadow-lg dark:bg-gray-800 bg-white"
+                class="z-20 origin-top-left rounded-md focus:outline-none absolute left-0 top-11 md:top-[54px] w-full md:w-[600px] shadow-lg dark:bg-gray-800 bg-white"
                 v-if="show === 'district'"
                 v-click-outside="() => (show = '')"
               >
-                <div class="px-2 py-1 grid lg:grid-cols-4 md:grid-cols-2">
+                <div
+                  class="px-2 py-1 grid md:grid-cols-4 grid-cols-2 max-h-[450px] md:max-h-max overflow-y-auto md:overflow-y-clip"
+                >
                   <div v-for="district in districts" :key="district.name">
                     <nuxt-link
                       class="flex items-center space-x-2 px-3 py-2 text-sm lg:space-x-4 text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md transition-all duration-200"
@@ -116,9 +120,16 @@
           /></nuxt-link>
         </div>
         <div
-          class="order-1 w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row"
-          :class="showMenu ? '' : 'hidden'"
+          class="order-1 w-full flex-col md:items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row"
+          :class="showMenu ? 'flex' : 'hidden'"
         >
+          <a
+            class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
+            target="_blank"
+            rel="noopener"
+            href="#"
+            >Tour Guide
+          </a>
           <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             :to="{ name: 'blog-page-page', params: { page: 1 } }"
@@ -130,14 +141,6 @@
             :to="{ name: 'about' }"
           >
             About Us</nuxt-link
-          >
-          <a
-            class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
-            target="_blank"
-            rel="noopener"
-            href="#"
-          >
-            Contact Us</a
           >
         </div>
       </div>
@@ -154,7 +157,7 @@ export default {
   data() {
     return {
       show: "",
-      showMenu: true,
+      showMenu: false,
     };
   },
   computed: {
