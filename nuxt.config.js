@@ -98,8 +98,8 @@ export default {
     hostname: "https://cholozai.com",
     path: "/sitemap.xml",
     gzip: true,
-    exclude: [],
-    defaults: { changefreq: "monthly", priority: 1, lastmod: new Date() },
+    exclude: ["/dashboard/**"],
+    defaults: { changefreq: "daily", priority: 1, lastmod: new Date() },
   },
 
   image: {
