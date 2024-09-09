@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div
-      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
+      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10"
       v-if="posts && posts.length"
     >
       <BlogSinglePost

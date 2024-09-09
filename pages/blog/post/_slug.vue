@@ -1,35 +1,47 @@
 <template>
-  <div>
-    <div
-      class="container px-8 mx-auto xl:px-5 max-w-screen-lg py-5 lg:py-8 !pt-0"
-    >
-      <div class="mx-auto max-w-screen-md">
-        <div class="flex justify-center">
-          <div class="flex gap-3">
-            <nuxt-link
-              class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-700"
-              :to="{
-                name: 'district-name-page',
-                params: { name: post.district, page: 1 },
-              }"
-            >
-              {{ post.district }}
-            </nuxt-link>
-          </div>
+  <div class="container mx-auto">
+    <div class="flex justify-center mb-10">
+      <nuxt-img
+        :src="`/images/blog/${post.image}`"
+        :alt="post.title"
+        format="webp"
+        class="object-cover md:w-2/3"
+      />
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-5 md:gap-10">
+      <!-- <div class="w-[160px] hidden md:block">
+            <div class="sticky top-24 w-full"></div>
+          </div> -->
+      <div class="flex-1">
+        <div class="flex flex-col md:flex-row justify-between md:items-center">
+          <h1
+            class="text-3xl md:text-4xl font-bold tracking-tight dark:text-white lg:leading-snug capitalize"
+          >
+            {{ post.title }}
+          </h1>
+
+          <nuxt-link
+            class="text-sm font-semibold uppercase text-blue-600"
+            :to="{
+              name: 'district-name-page',
+              params: { name: post.district, page: 1 },
+            }"
+          >
+            {{ post.district }}
+          </nuxt-link>
         </div>
-        <h1
-          class="text-brand-primary mb-3 mt-2 text-center text-3xl font-bold tracking-tight dark:text-white lg:text-4xl lg:leading-snug capitalize"
-        >
-          {{ post.title }}
-        </h1>
-        <div class="flex items-center justify-center gap-2">
-          <p class="text-gray-800 dark:text-gray-400">Shafayet Al-Anik</p>
-          ·
-          <div class="flex items-center text-sm">
+        <div class="flex items-center justify-between gap-2 mb-7">
+          <div class="flex items-center text-sm gap-2">
+            <p class="text-gray-800 dark:text-gray-400">Shafayet Al-Anik</p>
+            ·
             <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
           </div>
         </div>
-        <div class="flex justify-between items-center w-full" v-if="isDev">
+        <div
+          class="flex justify-between items-center w-full"
+          v-if="false && isDev"
+        >
           <div>
             <p @click="copyText(post._id)" class="cursor-pointer">
               {{ post._id }}
@@ -45,32 +57,21 @@
             />
           </form>
         </div>
-      </div>
-    </div>
-    <div
-      class="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg"
-    >
-      <nuxt-img
-        :src="`/images/blog/${post.image}`"
-        :alt="post.title"
-        format="webp"
-        class="object-cover w-full"
-      />
-    </div>
-    <div class="container p-4 mx-auto flex flex-col lg:flex-row gap-5">
-      <!-- <div class="w-[160px] hidden md:block">
-        <div class="sticky top-24 w-full"></div>
-      </div> -->
-      <div class="flex-1">
         <div
           v-for="(content, key) in post.content"
           :key="`content-${key}`"
           class="mb-7"
         >
-          <h2 v-if="content.title" class="text-2xl font-bold mb-2">
+          <h2
+            v-if="content.title"
+            class="text-2xl font-bold mb-2 tracking-tight"
+          >
             {{ content.title }}
           </h2>
-          <h2 v-else-if="key === 0" class="text-2xl font-bold mb-2 capitalize">
+          <h2
+            v-else-if="key === 0"
+            class="text-2xl font-bold mb-2 capitalize tracking-tight"
+          >
             Introduction to {{ post.title }}
           </h2>
           <article class="mb-10">
@@ -86,11 +87,11 @@
         </div>
       </div>
       <!-- <div class="w-[160px] hidden md:block">
-        <div class="sticky top-24 w-full"></div>
-      </div> -->
+            <div class="sticky top-24 w-full"></div>
+          </div> -->
       <div class="lg:w-80">
         <div class="lg:sticky top-24 w-full">
-          <h2 class="md:text-4xl text-2xl font-semibold mb-3">Related Post</h2>
+          <h2 class="md:text-4xl text-3xl font-bold mb-3">Related Post</h2>
           <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
             <BlogSinglePost
               v-for="(post, key) in related"

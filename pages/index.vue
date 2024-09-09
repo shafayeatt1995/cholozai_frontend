@@ -1,6 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+    <div
+      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10"
+    >
       <BlogSinglePost
         v-for="(post, key) in posts"
         :key="key + 'i'"
@@ -43,7 +45,7 @@ export default {
     try {
       const { store, error } = context;
       const { apiUrl } = store.getters;
-      let res = await axios.get(`${apiUrl}/fetch/posts/3`);
+      let res = await axios.get(`${apiUrl}/fetch/posts/2`);
       if (res.data) {
         const { posts } = res.data;
         return { posts };

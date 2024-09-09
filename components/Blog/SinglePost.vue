@@ -1,5 +1,5 @@
 <template>
-  <div class="group cursor-pointer">
+  <div class="group">
     <div
       class="overflow-hidden rounded-md bg-gray-100 transition-all duration-200 hover:scale-105 dark:bg-gray-800"
     >
@@ -19,36 +19,39 @@
       </nuxt-link>
     </div>
     <div>
-      <div class="flex gap-3 justify-between">
-        <nuxt-link
-          :to="{
-            name: 'district-name-page',
-            params: { name: post.district, page: 1 },
-          }"
-          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-blue-600"
-          >{{ post.district }}</nuxt-link
-        >
-      </div>
-      <h2
-        class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"
+      <nuxt-link
+        :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+        class="text-xl font-semibold dark:text-white pt-2 inline-block"
       >
-        <nuxt-link
-          :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+        <span
+          class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900 capitalize"
+          >{{ post.title }}</span
         >
-          <span
-            class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900 capitalize"
-            >{{ post.title }}</span
-          >
-        </nuxt-link>
-      </h2>
+      </nuxt-link>
       <div
-        class="mt-3 flex items-center text-gray-500 dark:text-gray-400 gap-2"
+        class="my-1 flex items-center text-gray-500 dark:text-gray-400 gap-2"
       >
         <p class="flex items-center gap-1">
           <span class="truncate text-sm">Shafayet Al-Anik</span>
         </p>
         <p class="text-xs text-gray-300 dark:text-gray-600">•</p>
         <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
+      </div>
+
+      <div class="flex gap-3 justify-between items-center">
+        <nuxt-link
+          :to="{
+            name: 'district-name-page',
+            params: { name: post.district, page: 1 },
+          }"
+          class="inline-block text-sm font-medium uppercase text-blue-600"
+          >{{ post.district }}</nuxt-link
+        >
+        <Button
+          variant="transparent"
+          :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+          >Read more...</Button
+        >
       </div>
     </div>
   </div>

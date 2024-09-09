@@ -21,7 +21,7 @@
         <span>Previous</span>
       </nuxt-link>
       <nuxt-link
-        v-if="posts && posts.length === 18"
+        v-if="posts && posts.length === 24"
         :to="to(+1)"
         class="relative flex items-center gap-1 rounded-r-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 disabled:pointer-events-none disabled:opacity-40 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
       >

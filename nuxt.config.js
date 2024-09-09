@@ -65,6 +65,11 @@ export default {
         head: true,
       },
       {
+        type: "text/javascript",
+        src: `/js/clearity.js`,
+        body: true,
+      },
+      {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
         body: true,
