@@ -67,7 +67,7 @@ export default {
       {
         type: "text/javascript",
         src: `/js/clearity.js`,
-        body: true,
+        head: true,
       },
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
