@@ -125,13 +125,11 @@
           >
             Blog</nuxt-link
           >
-          <a
+          <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
-            target="_blank"
-            rel="noopener"
-            href="#"
+            :to="{ name: 'about' }"
           >
-            Hotel & Resort</a
+            About Us</nuxt-link
           >
           <a
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
