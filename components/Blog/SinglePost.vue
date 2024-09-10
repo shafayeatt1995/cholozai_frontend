@@ -5,7 +5,7 @@
     >
       <nuxt-link
         class="relative block aspect-video"
-        :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+        :to="{ name: 'location-slug', params: { slug: post.slug } }"
       >
         <nuxt-img
           :src="`/images/blog/${post.image}`"
@@ -20,7 +20,7 @@
     </div>
     <div>
       <nuxt-link
-        :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+        :to="{ name: 'location-slug', params: { slug: post.slug } }"
         class="text-xl font-semibold dark:text-white pt-2 inline-block"
       >
         <span
@@ -49,7 +49,7 @@
         >
         <Button
           variant="transparent"
-          :to="{ name: 'blog-post-slug', params: { slug: post.slug } }"
+          :to="{ name: 'location-slug', params: { slug: post.slug } }"
           >Read more...</Button
         >
       </div>
