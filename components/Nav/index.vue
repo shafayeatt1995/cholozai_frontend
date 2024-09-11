@@ -134,7 +134,7 @@
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             :to="{ name: 'location-page-page', params: { page: 1 } }"
           >
-            Blog</nuxt-link
+            Locations</nuxt-link
           >
           <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
