@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/location/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/:page",
+      "destination": "/location/page/:page",
+      "permanent": true
+    }
+  ]
+}

@@ -10,15 +10,12 @@
     </div>
 
     <div class="flex flex-col lg:flex-row gap-5 md:gap-10">
-      <!-- <div class="w-[160px] hidden md:block">
-            <div class="sticky top-24 w-full"></div>
-          </div> -->
       <div class="flex-1">
         <div class="flex flex-col md:flex-row justify-between md:items-center">
           <h1
             class="text-3xl md:text-4xl font-bold tracking-tight dark:text-white lg:leading-snug capitalize"
           >
-            {{ post.title }}
+            <EditMode v-model="post.title" />
           </h1>
 
           <nuxt-link
@@ -39,8 +36,8 @@
           </div>
         </div>
         <div
-          class="flex justify-between items-center w-full"
-          v-if="false && isDev"
+          class="flex justify-between items-center w-full mb-10"
+          v-if="isDev"
         >
           <div>
             <p @click="copyText(post._id)" class="cursor-pointer">
@@ -48,25 +45,32 @@
             </p>
             <a :href="post.url" target="_blank">{{ post.url }}</a>
           </div>
-          <form @submit.prevent="submit">
+          <!-- <form @submit.prevent="submit">
             <input
               type="text"
               v-model="title"
               class="border w-full h-20 bg-blue-600 text-white mt-10"
               @click="paste"
             />
-          </form>
+          </form> -->
         </div>
         <div
           v-for="(content, key) in post.content"
           :key="`content-${key}`"
-          class="mb-7"
+          class="mb-7 relative"
         >
+          <div class="absolute right-0 top-0 flex gap-5 text-xl" v-if="isDev">
+            <i class="fa-regular fa-copy cursor-pointer" @click="copy(key)"></i>
+            <i
+              class="fas fa-trash-can cursor-pointer"
+              @click="deleteContent(key)"
+            ></i>
+          </div>
           <h2
             v-if="content.title"
             class="text-2xl font-bold mb-2 tracking-tight"
           >
-            {{ content.title }}
+            <EditMode v-model="content.title" />
           </h2>
           <h2
             v-else-if="key === 0"
@@ -75,30 +79,33 @@
             Introduction to {{ post.title }}
           </h2>
           <article class="mb-10">
-            <p
+            <div
               v-for="(article, i) in content.content"
               :key="`article-${i}`"
               class="mb-4"
             >
-              {{ article }}
-            </p>
+              <EditMode v-model="content.content[i]" tagName="div" />
+            </div>
           </article>
           <hr v-if="key + 1 !== post.content.length" />
         </div>
+        <div class="flex justify-between gap-10" v-if="isDev">
+          <Button class="w-full" @click.native.prevent="updatePost"
+            >Update</Button
+          >
+          <Button class="w-full" @click.native.prevent="refetch"
+            >Refetch</Button
+          >
+        </div>
       </div>
-      <!-- <div class="w-[160px] hidden md:block">
-            <div class="sticky top-24 w-full"></div>
-          </div> -->
       <div class="lg:w-80">
-        <div class="lg:sticky top-24 w-full">
-          <h2 class="md:text-4xl text-3xl font-bold mb-3">Related Post</h2>
-          <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
-            <BlogSinglePost
-              v-for="(post, key) in related"
-              :key="key + 'i'"
-              :post="post"
-            />
-          </div>
+        <h2 class="md:text-4xl text-3xl font-bold mb-3">Related Post</h2>
+        <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
+          <BlogSinglePost
+            v-for="(post, key) in related"
+            :key="key + 'i'"
+            :post="post"
+          />
         </div>
       </div>
     </div>
@@ -169,6 +176,26 @@ export default {
         // });
         this.title = "";
       } catch (error) {}
+    },
+    async updatePost() {
+      try {
+        await this.$axios.$post(
+          `${this.$api}/scrap/update-post-manually`,
+          this.post
+        );
+        this.title = "";
+      } catch (error) {}
+    },
+    async refetch() {
+      try {
+        await this.$axios.$get(`${this.$api}/scrap/refetch/${this.post.slug}`);
+      } catch (error) {}
+    },
+    copy(i) {
+      this.post.content.splice(i, 0, this.post.content[i]);
+    },
+    deleteContent(i) {
+      this.post.content.splice(i, 1);
     },
   },
 };

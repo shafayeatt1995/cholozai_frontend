@@ -16,7 +16,11 @@
           format="webp"
           fit="cover"
         />
-        <button class="p-2 text-2xl" @click="showMenu = !showMenu">
+        <button
+          class="p-2 text-2xl"
+          @click="showMenu = !showMenu"
+          aria-label="Toggle menu"
+        >
           <i class="fa-solid fa-bars"></i>
         </button>
       </nuxt-link>
