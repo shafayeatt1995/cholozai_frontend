@@ -123,9 +123,29 @@ export default {
     const description =
       this.post?.content[0]?.content[0]?.split(".")?.slice(2)?.join(". ") ||
       "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
+    const mainEntity = this.post.content
+      .filter(({ title }) => title && title.length)
+      .map(({ title, content }) => ({
+        "@type": "Question",
+        name: `${title}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: content.join(". "),
+        },
+      }));
     return {
       title,
       meta: meta({ title, description }),
+      script: [
+        {
+          type: "application/ld+json",
+          json: {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity,
+          },
+        },
+      ],
     };
   },
   async asyncData(context) {
