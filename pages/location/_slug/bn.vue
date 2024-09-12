@@ -122,11 +122,11 @@ import { meta } from "@/utils";
 export default {
   name: "BlogPost",
   head() {
-    const title = `${this.post.title} | ${this.$pageTitle}`;
+    const title = `${this.post.bnTitle} | ${this.$pageTitle}`;
     const description =
-      this.post?.content[0]?.content[0]?.split(".")?.slice(2)?.join(". ") ||
+      this.post?.bnContent[0]?.content[0]?.split(".")?.slice(2)?.join(". ") ||
       "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
-    const mainEntity = this.post.content
+    const mainEntity = this.post.bnContent
       .filter(({ title }) => title && title.length)
       .map(({ title, content }) => ({
         "@type": "Question",
