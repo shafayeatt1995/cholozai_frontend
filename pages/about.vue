@@ -25,7 +25,6 @@
         />
       </div>
     </div>
-
     <div v-for="(content, key) in contents" :key="key" class="mt-10">
       <h2 class="text-2xl lg:text-3xl font-semibold">{{ content.title }}</h2>
       <p>
