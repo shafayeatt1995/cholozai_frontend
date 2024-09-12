@@ -11,15 +11,16 @@
 
     <div class="flex flex-col lg:flex-row gap-5 md:gap-10">
       <div class="flex-1">
+        <LanguageSwitch />
         <div class="flex flex-col md:flex-row justify-between md:items-center">
           <h1
             class="text-3xl md:text-4xl font-bold tracking-tight dark:text-white lg:leading-snug capitalize"
           >
-            <EditMode v-model="post.title" />
+            <EditMode v-model="post.bnTitle" />
           </h1>
 
           <nuxt-link
-            class="text-sm font-semibold uppercase text-blue-600"
+            class="text-sm font-semibold uppercase text-blue-600 mt-2"
             :to="{
               name: 'district-name-page',
               params: { name: post.district, page: 1 },
@@ -30,9 +31,11 @@
         </div>
         <div class="flex items-center justify-between gap-2 mb-7">
           <div class="flex items-center text-sm gap-2">
-            <p class="text-gray-800 dark:text-gray-400">Shafayet Al-Anik</p>
+            <p class="text-gray-800 dark:text-gray-400">শাফায়েত আল-অনিক</p>
             ·
-            <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
+            <time class="truncate text-sm">{{
+              post.postDate | cDate("bn")
+            }}</time>
           </div>
         </div>
         <div
@@ -55,7 +58,7 @@
           </form> -->
         </div>
         <div
-          v-for="(content, key) in post.content"
+          v-for="(content, key) in post.bnContent"
           :key="`content-${key}`"
           class="mb-7 relative"
         >
@@ -101,7 +104,7 @@
       <div class="lg:w-80">
         <h2 class="md:text-4xl text-3xl font-bold mb-3">Related Post</h2>
         <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
-          <BlogSinglePost
+          <BlogSinglePostBn
             v-for="(post, key) in related"
             :key="key + 'i'"
             :post="post"
@@ -208,7 +211,9 @@ export default {
     },
     async refetch() {
       try {
-        await this.$axios.$get(`${this.$api}/scrap/refetch/${this.post.slug}`);
+        await this.$axios.$get(
+          `${this.$api}/scrap/refetch/bn/${this.post.slug}`
+        );
       } catch (error) {}
     },
     copy(i) {

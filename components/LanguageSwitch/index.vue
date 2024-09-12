@@ -1,0 +1,30 @@
+<template>
+  <div class="flex gap-2 mb-3">
+    <nuxt-link
+      class="border border-gray-300 rounded-lg py-2 px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
+      :class="$route.name === 'location-slug' ? ' bg-blue-600 text-white' : ''"
+      :to="{ name: 'location-slug', params: { slug: $route.params.slug } }"
+      >Read in English
+      <i
+        :class="$route.name === 'location-slug' ? ' fas' : 'far'"
+        class="fa-circle-check pl-1"
+      ></i>
+    </nuxt-link>
+    <nuxt-link
+      class="border border-gray-300 rounded-lg py-2 px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
+      :class="
+        $route.name === 'location-slug-bn' ? ' bg-blue-600 text-white' : ''
+      "
+      :to="{ name: 'location-slug-bn', params: { slug: $route.params.slug } }"
+      >বাংলায় পড়ুন
+      <i
+        :class="$route.name === 'location-slug-bn' ? ' fas' : 'far'"
+        class="fa-circle-check pl-1"
+      ></i>
+    </nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>

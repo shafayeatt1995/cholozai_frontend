@@ -7,8 +7,8 @@ Vue.filter("fullDate", (value, sign = "-") => {
     .toLocaleDateString("en-GB", options)
     .replace(/ /g, sign);
 });
-Vue.filter("cDate", (value) => {
-  return new Date(value).toLocaleDateString("en-GB", {
+Vue.filter("cDate", (value, format = "en-GB") => {
+  return new Date(value).toLocaleDateString(format, {
     day: "numeric",
     month: "long",
     year: "numeric",
