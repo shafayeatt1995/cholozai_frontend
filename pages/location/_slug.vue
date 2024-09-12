@@ -130,7 +130,7 @@ export default {
         name: `${title}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: content.join(". "),
+          text: content.join(" "),
         },
       }));
     return {
