@@ -26,7 +26,7 @@
               A Complete Travel Guide
               <span class="font-bold">Cholozai.com</span>
             </h1>
-            <h3
+            <p
               class="lg:text-xl text-sm text-white font-semibold md:mt-8 mt-4 text-center px-2"
             >
               Discover the beauty, history, and culture of Bangladesh with
@@ -34,7 +34,7 @@
               destination with our in-depth guides, designed to help you
               experience the best of what this incredible country offers. Plan
               your perfect trip with insider tips and local insights.
-            </h3>
+            </p>
           </div>
         </div>
       </div>
