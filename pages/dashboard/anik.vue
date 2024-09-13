@@ -7,6 +7,7 @@
           name: 'division-name-page',
           params: { name: division.slug, page: 1 },
         }"
+        :title="division.name"
         ><span> {{ division.name }}</span></nuxt-link
       >
     </div>

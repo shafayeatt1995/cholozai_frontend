@@ -19,7 +19,9 @@
             <span>Go back</span>
           </Button>
 
-          <Button :to="{ name: 'index' }"> Take me home </Button>
+          <Button :to="{ name: 'index' }" title="cholozai">
+            Take me home
+          </Button>
         </div>
       </div>
 

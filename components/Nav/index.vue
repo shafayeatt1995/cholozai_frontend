@@ -6,6 +6,7 @@
       <nuxt-link
         :to="{ name: 'index' }"
         class="md:hidden flex w-full items-center justify-between px-2"
+        title="cholozai"
       >
         <nuxt-img
           alt="Logo"
@@ -34,6 +35,7 @@
         >
           <nuxt-link
             :to="{ name: 'index' }"
+            title="cholozai"
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             >Home</nuxt-link
           >
@@ -65,6 +67,7 @@
                         name: 'division-name-page',
                         params: { name: division.slug, page: 1 },
                       }"
+                      :title="division.name"
                       ><span> {{ division.name }}</span></nuxt-link
                     >
                   </div>
@@ -102,6 +105,7 @@
                         name: 'district-name-page',
                         params: { name: district.name, page: 1 },
                       }"
+                      :title="district.name"
                       ><span> {{ district.name }}</span></nuxt-link
                     >
                   </div>
@@ -113,7 +117,7 @@
         <div
           class="hidden md:flex w-full items-center justify-between md:w-auto px-2 md:px-0"
         >
-          <nuxt-link :to="{ name: 'index' }">
+          <nuxt-link :to="{ name: 'index' }" title="cholozai">
             <nuxt-img
               format="webp"
               alt="Logo"
@@ -129,22 +133,23 @@
           class="order-1 w-full flex-col md:items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row"
           :class="showMenu ? 'flex' : 'hidden'"
         >
-          <a
+          <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
-            target="_blank"
-            rel="noopener"
-            href="#"
+            :to="{ name: 'tour-guide' }"
+            title="Tour guide page"
             >Tour Guide
-          </a>
+          </nuxt-link>
           <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             :to="{ name: 'location-page-page', params: { page: 1 } }"
+            title="location page"
           >
             Locations</nuxt-link
           >
           <nuxt-link
             class="px-3 py-2 text-sm font-medium text-gray-800 dark:text-white hover:text-blue-500"
             :to="{ name: 'about' }"
+            title="About us page"
           >
             About Us</nuxt-link
           >

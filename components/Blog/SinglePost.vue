@@ -6,6 +6,7 @@
       <nuxt-link
         class="relative block aspect-video"
         :to="{ name: 'location-slug', params: { slug: post.slug } }"
+        :title="post.title"
       >
         <nuxt-img
           :src="`/images/blog/${post.image}`"
@@ -23,6 +24,7 @@
       <h2>
         <nuxt-link
           :to="{ name: 'location-slug', params: { slug: post.slug } }"
+          :title="post.title"
           class="text-xl font-semibold dark:text-white pt-2 inline-block"
         >
           <span
@@ -38,7 +40,7 @@
           <span class="truncate text-sm">Shafayet Al-Anik</span>
         </p>
         <p class="text-xs text-gray-300 dark:text-gray-600">•</p>
-        <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
+        <p class="truncate text-sm">{{ post.postDate | cDate }}</p>
       </div>
 
       <div class="flex gap-3 justify-between items-center">
@@ -47,12 +49,14 @@
             name: 'district-name-page',
             params: { name: post.district, page: 1 },
           }"
+          :title="post.district"
           class="inline-block text-sm font-medium uppercase text-blue-600"
           >{{ post.district }}</nuxt-link
         >
         <Button
           variant="transparent"
           :to="{ name: 'location-slug', params: { slug: post.slug } }"
+          :title="post.title"
           >Read more...</Button
         >
       </div>

@@ -26,6 +26,7 @@
               name: 'district-name-page',
               params: { name: post.district, page: 1 },
             }"
+            title="post.district"
           >
             {{ post.district }}
           </nuxt-link>
@@ -34,7 +35,7 @@
           <div class="flex items-center text-sm gap-2">
             <p class="text-gray-800 dark:text-gray-400">Shafayet Al-Anik</p>
             ·
-            <time class="truncate text-sm">{{ post.postDate | cDate }}</time>
+            <p class="truncate text-sm">{{ post.postDate | cDate }}</p>
           </div>
         </div>
         <div

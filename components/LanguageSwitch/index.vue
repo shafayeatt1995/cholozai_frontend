@@ -4,6 +4,7 @@
       class="border border-gray-300 rounded-lg py-2 px-3 md:px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
       :class="$route.name === 'location-slug' ? ' bg-blue-600 text-white' : ''"
       :to="{ name: 'location-slug', params: { slug: $route.params.slug } }"
+      title="Read in English"
       >Read in English
       <i
         :class="$route.name === 'location-slug' ? ' fas' : 'far'"
@@ -16,6 +17,7 @@
         $route.name === 'location-slug-bn' ? ' bg-blue-600 text-white' : ''
       "
       :to="{ name: 'location-slug-bn', params: { slug: $route.params.slug } }"
+      title="বাংলায় পড়ুন"
       >বাংলায় পড়ুন
       <i
         :class="$route.name === 'location-slug-bn' ? ' fas' : 'far'"

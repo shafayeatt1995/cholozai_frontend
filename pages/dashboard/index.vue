@@ -8,6 +8,7 @@
           name: 'district-name-page',
           params: { name: district.name, page: 1 },
         }"
+        :title="district.name"
         ><span> {{ district.name }}</span></nuxt-link
       >
     </div>
