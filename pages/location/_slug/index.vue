@@ -135,27 +135,33 @@ export default {
         },
       }));
 
+    let position = 1;
+
     const breadcrumbList = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         {
           "@type": "ListItem",
-          position: 1,
+          position: position++,
           name: "Home",
           item: `${this.baseUrl}${this.$router.resolve("/").href}`,
         },
+        ...(this.division
+          ? [
+              {
+                "@type": "ListItem",
+                position: position++,
+                name: this.division.name,
+                item: `${this.baseUrl}${
+                  this.$router.resolve(`/division/${this.division.slug}/1`).href
+                }`,
+              },
+            ]
+          : []),
         {
           "@type": "ListItem",
-          position: 2,
-          name: this.division.name,
-          item: `${this.baseUrl}${
-            this.$router.resolve(`/division/${this.division.slug}/1`).href
-          }`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
+          position: position++,
           name: this.post.district,
           item: `${this.baseUrl}${
             this.$router.resolve(`/district/${this.post.district}/1`).href
@@ -163,7 +169,7 @@ export default {
         },
         {
           "@type": "ListItem",
-          position: 4,
+          position: position++,
           name: this.post.title,
           item: `${this.baseUrl}${this.$route.fullPath}`,
         },
