@@ -36,16 +36,6 @@ export default {
     return {
       title,
       meta: meta({ title, description }),
-      script: [
-        {
-          type: "application/ld+json",
-          json: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity,
-          },
-        },
-      ],
     };
   },
   async asyncData(context) {
