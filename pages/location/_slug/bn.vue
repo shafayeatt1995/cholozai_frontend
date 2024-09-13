@@ -144,25 +144,29 @@ export default {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: this.$router.resolve("/").href,
+          item: `${this.baseUrl}${this.$router.resolve("/").href}`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: this.division.name,
-          item: this.$router.resolve(`/division/${this.division.slug}/1`).href,
+          item: `${this.baseUrl}${
+            this.$router.resolve(`/division/${this.division.slug}/1`).href
+          }`,
         },
         {
           "@type": "ListItem",
           position: 3,
           name: this.post.district,
-          item: this.$router.resolve(`/district/${this.post.district}/1`).href,
+          item: `${this.baseUrl}${
+            this.$router.resolve(`/district/${this.post.district}/1`).href
+          }`,
         },
         {
           "@type": "ListItem",
           position: 4,
           name: this.post.title,
-          item: this.$route.fullPath,
+          item: `${this.baseUrl}${this.$route.fullPath}`,
         },
       ],
     };
@@ -217,7 +221,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["isDev"]),
+    ...mapGetters(["isDev", "baseUrl"]),
   },
   methods: {
     copyText(text) {

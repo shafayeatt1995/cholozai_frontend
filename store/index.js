@@ -3,6 +3,7 @@ import axios from "axios";
 
 export const state = () => ({
   apiUrl: process.env.API_URL,
+  baseUrl: process.env.BASE_URL,
   windowWidth: 0,
   districts: [],
   divisions: [],
@@ -37,6 +38,7 @@ export const actions = {
 };
 
 export const getters = {
+  baseUrl: (state) => state.baseUrl,
   apiUrl: (state) => state.apiUrl,
   districts: (state) => state.districts,
   divisions: (state) => state.divisions,
