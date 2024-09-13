@@ -122,7 +122,7 @@ export default {
   head() {
     const title = `${this.post.title} | ${this.$pageTitle}`;
     const description =
-      this.post?.content[0]?.content[0]?.split(".")?.slice(2)?.join(". ") ||
+      `${this.post?.content[0]?.content[0]?.slice(0, 150)}...` ||
       "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
     const mainEntity = this.post.content
       .filter(({ title }) => title && title.length)
