@@ -134,6 +134,38 @@ export default {
           text: content.join(" "),
         },
       }));
+
+    const breadcrumbList = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: this.$router.resolve("/").href,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: this.division.name,
+          item: this.$router.resolve(`/division/${this.division.slug}/1`).href,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: this.post.district,
+          item: this.$router.resolve(`/district/${this.post.district}/1`).href,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: this.post.title,
+          item: this.$route.fullPath,
+        },
+      ],
+    };
+
     return {
       title,
       meta: meta({ title, description }),
@@ -146,6 +178,10 @@ export default {
             mainEntity,
           },
         },
+        {
+          type: "application/ld+json",
+          json: breadcrumbList,
+        },
       ],
     };
   },
@@ -157,8 +193,8 @@ export default {
       const slug = params.slug;
       let res = await axios.get(`${apiUrl}/fetch/post/${slug}`);
       if (res.data?.post) {
-        const { post, related } = res.data;
-        return { post, related };
+        const { post, related, division } = res.data;
+        return { post, related, division };
       } else {
         error({ statusCode: 404, message: "Not found" });
       }
@@ -175,6 +211,7 @@ export default {
     return {
       post: {},
       related: {},
+      division: {},
       title: "",
     };
   },

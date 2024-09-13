@@ -19,15 +19,17 @@
       </nuxt-link>
     </div>
     <div>
-      <nuxt-link
-        :to="{ name: 'location-slug-bn', params: { slug: post.slug } }"
-        class="text-xl font-semibold dark:text-white pt-2 inline-block"
-      >
-        <span
-          class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900 capitalize"
-          >{{ post.bnTitle }}</span
+      <h2>
+        <nuxt-link
+          :to="{ name: 'location-slug-bn', params: { slug: post.slug } }"
+          class="text-xl font-semibold dark:text-white pt-2 inline-block"
         >
-      </nuxt-link>
+          <span
+            class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900 capitalize"
+            >{{ post.bnTitle }}</span
+          >
+        </nuxt-link>
+      </h2>
       <div
         class="my-1 flex items-center text-gray-500 dark:text-gray-400 gap-2"
       >

@@ -33,9 +33,48 @@ export default {
     const title = `Blog - Page ${this.page} | ${this.$pageTitle}`;
     const description = `Explore a diverse range of travel information on CholoZai. From travel tips and destination guides to cultural insights. page number ${this.page}.`;
 
+    const breadcrumbList = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: this.$router.resolve("/").href,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: this.post.district,
+          item: this.$router.resolve(`/district/${this.post.district}/1`).href,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: this.post.title,
+          item: this.$route.fullPath,
+        },
+      ],
+    };
+
     return {
       title,
       meta: meta({ title, description }),
+      script: [
+        {
+          type: "application/ld+json",
+          json: {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity,
+          },
+        },
+        {
+          type: "application/ld+json",
+          json: breadcrumbList,
+        },
+      ],
     };
   },
   async asyncData(context) {
