@@ -1,6 +1,58 @@
 {
   "redirects": [
     {
+      "source": "/blog/post/musa_khan_mosque_i",
+      "destination": "/location/musa-khan-mosque-dhaka"
+    },
+    {
+      "source": "/blog/post/three_leaders_2",
+      "destination": "/location/the-mausoleum-of-three-leaders"
+    },
+    {
+      "source": "/blog/post/unbeatable_n",
+      "destination": "/"
+    },
+    {
+      "source": "/blog/post/bark",
+      "destination": "/location/sadarghat-dhaka"
+    },
+    {
+      "source": "/blog/page/36",
+      "destination": "/location/page/9"
+    },
+    {
+      "source": "/blog/post/botanical_garden_mymensingh_k",
+      "destination": "/location/botanical-garden-mymensingh"
+    },
+    {
+      "source": "/blog/post/petrail_mosque_0",
+      "destination": "/location/pathrail-mosque-faridpur"
+    },
+    {
+      "source": "/blog/post/rack_2",
+      "destination": "/"
+    },
+    {
+      "source": "/blog/post/puthia_rajbari",
+      "destination": "/location/puthia-rajbari-rajshahi"
+    },
+    {
+      "source": "/blog/post/liberation_war_museum_5",
+      "destination": "/location/liberation-war-museum-dhaka"
+    },
+    {
+      "source": "/blog/post/paharpur_buddhist_monastery",
+      "destination": "/location/paharpur-buddhist-bihar"
+    },
+    {
+      "source": "/blog/post/bashundhara_j",
+      "destination": "/location/bashundhara-city-dhaka"
+    },
+    {
+      "source": "/blog/post/baitul_mukarram_mosque_6",
+      "destination": "/location/baitul-mukarram-national-mosque-dhaka"
+    },
+    {
       "source": "/blog/post/:slug",
       "destination": "/location/:slug",
       "permanent": true
