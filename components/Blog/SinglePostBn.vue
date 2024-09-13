@@ -10,6 +10,7 @@
         <nuxt-img
           :src="`/images/blog/${post.image}`"
           :alt="post.bnTitle"
+          :title="post.bnTitle"
           width="400"
           height="225"
           format="webp"

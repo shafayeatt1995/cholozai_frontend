@@ -22,6 +22,7 @@
           class="w-full max-h-[500px]"
           src="/images/about.svg"
           alt="cholozai"
+          title="cholozai"
         />
       </div>
     </div>

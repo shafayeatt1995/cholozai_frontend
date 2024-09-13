@@ -28,6 +28,7 @@
           src="/images/404.svg"
           class="object-contain w-full"
           alt="404 page not found"
+          title="404 page not found"
           fit="cover"
         />
       </div>

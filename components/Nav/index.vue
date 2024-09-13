@@ -9,6 +9,7 @@
       >
         <nuxt-img
           alt="Logo"
+          title="Logo"
           width="240"
           height="98"
           class="w-[160px] h-[65px]"
@@ -116,6 +117,7 @@
             <nuxt-img
               format="webp"
               alt="Logo"
+              title="Logo"
               width="240"
               height="98"
               fit="cover"

@@ -4,6 +4,7 @@
       <nuxt-img
         :src="`/images/blog/${post.image}`"
         :alt="post.title"
+        :title="post.title"
         format="webp"
         class="object-cover md:w-2/3"
       />

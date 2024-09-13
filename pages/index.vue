@@ -7,6 +7,7 @@
         <nuxt-img
           src="/bg.jpeg"
           alt="Hero bg"
+          title="Hero bg"
           format="webp"
           quality="50"
           class="object-cover inset-0 w-full h-full"
