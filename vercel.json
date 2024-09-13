@@ -53,6 +53,10 @@
       "destination": "/location/baitul-mukarram-national-mosque-dhaka"
     },
     {
+      "source": "/blog/post/sadarghat_w",
+      "destination": "/location/sadarghat-dhaka"
+    },
+    {
       "source": "/blog/post/:slug",
       "destination": "/location/:slug",
       "permanent": true
