@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dark:bg-gray-900/50 bg-white/50 backdrop-blur-md sticky top-0 z-10"
+    class="dark:bg-gray-900/50 bg-white/50 backdrop-blur-md sticky top-0 z-20 shadow-md"
   >
     <div class="container mx-auto py-1">
       <nuxt-link

@@ -3,7 +3,7 @@
     <div class="selection:bg-blue-600 selection:text-white">
       <Nav />
       <div class="mt-2"></div>
-      <div class="px-2 md:px-0">
+      <div :class="$route.name === 'index' ? '' : 'px-2 md:px-0'">
         <Nuxt />
       </div>
       <Footer />

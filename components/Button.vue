@@ -2,7 +2,7 @@
   <nuxt-link
     v-if="to"
     :to="to"
-    class="flex justify-center items-center font-medium tracking-wide capitalize transition-colors duration-300 transform rounded-md focus:outline-none focus:ring focus:ring-opacity-50 gap-1"
+    class="flex justify-center items-center font-medium tracking-wide capitalize transition-colors duration-300 transform rounded-md focus:outline-none focus:ring focus:ring-opacity-50 gap-1 dark:text-white"
     :class="[variantClass, roundedClass]"
     :disabled="loading"
   >
@@ -11,7 +11,7 @@
   </nuxt-link>
   <button
     v-else
-    class="focus:ring-transparent flex justify-center items-center font-medium tracking-wide capitalize transform focus:outline-none focus:ring focus:ring-opacity-50 gap-1 transition-all duration-300"
+    class="focus:ring-transparent flex justify-center items-center font-medium tracking-wide capitalize transform focus:outline-none focus:ring focus:ring-opacity-50 gap-1 transition-all duration-300 dark:text-white"
     :class="[variantClass, roundedClass]"
     :disabled="loading"
     aria-label="Submit"

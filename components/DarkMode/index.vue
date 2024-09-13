@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <label class="switch">
-      <input type="checkbox" v-model="isDarkMode" hidden />
-      <span class="slider"></span>
-    </label>
-  </div>
+  <label class="switch relative z-50">
+    <input type="checkbox" v-model="isDarkMode" hidden />
+    <span class="slider"></span>
+  </label>
 </template>
 
 <script>
