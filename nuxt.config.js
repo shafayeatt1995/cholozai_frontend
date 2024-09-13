@@ -130,7 +130,7 @@ export default {
     },
   },
 
-  router: { middleware: ["errorHandler"] },
+  router: { middleware: ["errorHandler", "redirect"] },
 
   build: {
     analyze: !!process.env.ANALYZE,
