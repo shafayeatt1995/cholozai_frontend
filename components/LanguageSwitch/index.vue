@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-2 mb-3">
     <nuxt-link
-      class="border border-gray-300 rounded-lg py-2 px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
+      class="border border-gray-300 rounded-lg py-2 px-3 md:px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
       :class="$route.name === 'location-slug' ? ' bg-blue-600 text-white' : ''"
       :to="{ name: 'location-slug', params: { slug: $route.params.slug } }"
       >Read in English
@@ -11,7 +11,7 @@
       ></i>
     </nuxt-link>
     <nuxt-link
-      class="border border-gray-300 rounded-lg py-2 px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
+      class="border border-gray-300 rounded-lg py-2 px-3 md:px-5 flex items-center hover:bg-blue-600 hover:text-white transition-all duration-200 w-full md:w-auto justify-center"
       :class="
         $route.name === 'location-slug-bn' ? ' bg-blue-600 text-white' : ''
       "
