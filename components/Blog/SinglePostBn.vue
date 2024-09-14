@@ -8,15 +8,11 @@
         :to="{ name: 'location-slug-bn', params: { slug: post.slug } }"
         :title="post.bnTitle"
       >
-        <nuxt-img
-          :src="`/images/blog/${post.image}`"
+        <img
+          :src="`/images/location/${post.image}`"
           :alt="post.bnTitle"
           :title="post.bnTitle"
-          width="400"
-          height="225"
-          format="webp"
           class="object-cover transition-all size-full"
-          fit="cover"
         />
       </nuxt-link>
     </div>

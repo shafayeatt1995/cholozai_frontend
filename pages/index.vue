@@ -4,12 +4,10 @@
       class="h-dvh bg-cover bg-center relative -mt-[81px] overflow-x-hidden"
     >
       <div class="w-screen h-dvh absolute top-0 left-0">
-        <nuxt-img
-          src="/bg.jpeg"
-          alt="Hero bg"
-          title="Hero bg"
-          format="webp"
-          quality="50"
+        <img
+          src="/bg.webp"
+          alt="Hero background image Cholozai.com"
+          title="Hero background image Cholozai.com"
           class="object-cover inset-0 w-full h-full"
         />
       </div>

@@ -8,15 +8,11 @@
         class="md:hidden flex w-full items-center justify-between px-2"
         title="cholozai"
       >
-        <nuxt-img
+        <img
           alt="Logo"
           title="Logo"
-          width="240"
-          height="98"
           class="w-[160px] h-[65px]"
           src="/full-logo-tr.webp"
-          format="webp"
-          fit="cover"
         />
         <button
           class="p-2 text-2xl"
@@ -118,13 +114,9 @@
           class="hidden md:flex w-full items-center justify-between md:w-auto px-2 md:px-0"
         >
           <nuxt-link :to="{ name: 'index' }" title="cholozai">
-            <nuxt-img
-              format="webp"
+            <img
               alt="Logo"
               title="Logo"
-              width="240"
-              height="98"
-              fit="cover"
               class="w-[160px] h-[65px]"
               src="/full-logo-tr.webp"
           /></nuxt-link>

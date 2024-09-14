@@ -1,11 +1,10 @@
 <template>
   <div class="container mx-auto">
     <div class="flex justify-center mb-10">
-      <nuxt-img
-        :src="`/images/blog/${post.image}`"
+      <img
+        :src="`/images/location/${post.image}`"
         :alt="post.title"
         :title="post.title"
-        format="webp"
         class="object-cover md:w-2/3"
       />
     </div>
