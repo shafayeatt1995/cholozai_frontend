@@ -182,6 +182,13 @@ export default {
     return {
       title,
       meta: meta({ title, description }),
+      link: [
+        {
+          rel: "alternate",
+          href: `${this.baseUrl + this.$route.path}/bn`,
+          hreflang: "bn-BD",
+        },
+      ],
       script: [
         {
           type: "application/ld+json",

@@ -181,6 +181,13 @@ export default {
     return {
       title,
       meta: meta({ title, description }),
+      link: [
+        {
+          rel: "alternate",
+          href: `${(this.baseUrl + this.$route.path).slice(0, -3)}`,
+          hreflang: "en",
+        },
+      ],
       script: [
         {
           type: "application/ld+json",
