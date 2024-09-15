@@ -48,7 +48,7 @@ import { meta } from "@/utils";
 
 export default {
   head() {
-    const title = `About us | ${this.$pageTitle}`;
+    const title = `About us - ${this.$pageTitle}`;
     const description =
       "Welcome to Cholozai.com! We're thrilled to have you here, and we'd love to tell you a bit about who we are, what we do, and how we can help make your travels in Bangladesh unforgettable.";
     return {

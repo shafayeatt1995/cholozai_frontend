@@ -70,7 +70,7 @@
           </div>
           <h2
             v-if="content.title"
-            class="text-2xl font-bold mb-2 tracking-tight"
+            class="text-2xl font-bold mb-2 tracking-tight capitalize"
           >
             <EditMode v-model="content.title" />
           </h2>

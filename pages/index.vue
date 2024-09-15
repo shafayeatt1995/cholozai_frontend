@@ -83,7 +83,7 @@ export default {
   name: "IndexPage",
   head() {
     return {
-      title: `All tours and travel tips and information | ${this.$pageTitle}`,
+      title: `All tours and travel tips and information - ${this.$pageTitle}`,
       meta: meta(),
     };
   },

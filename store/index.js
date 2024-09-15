@@ -42,7 +42,7 @@ export const getters = {
   apiUrl: (state) => state.apiUrl,
   districts: (state) => state.districts,
   divisions: (state) => state.divisions,
-  pageTitle: () => process.env.APP_NAME || "CholoZai",
+  pageTitle: () => "Cholozai Travel Guide",
   windowWidth: (state) => state.windowWidth,
   isDev: () => process.env.NODE_ENV === "development",
   isMobile: (state) => state.windowWidth < 992,
