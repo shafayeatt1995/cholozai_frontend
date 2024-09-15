@@ -51,19 +51,13 @@ export default {
       const { store, error } = context;
       const { baseUrl } = store.getters;
 
-      // Fetch the sitemap XML
       let res = await axios.get(`${baseUrl}/sitemap.xml`, {
         responseType: "text",
       });
 
-      // Check if response is successful
       if (res.status === 200) {
-        const text = res.data; // Directly use res.data if it's already text
+        const text = res.data;
 
-        // Log the XML content for debugging
-        console.log(text);
-
-        // Parse the XML data
         const result = await parseStringPromise(text);
         const urls = result.urlset.url.map((entry) => {
           const loc = entry.loc[0] || "No URL";
@@ -91,9 +85,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.container {
-  max-width: 800px;
-}
-</style>
