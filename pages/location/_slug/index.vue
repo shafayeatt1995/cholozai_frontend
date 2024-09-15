@@ -2,6 +2,8 @@
   <div class="container mx-auto">
     <div class="flex justify-center mb-10">
       <img
+        loading="lazy"
+        decoding="async"
         :src="`/images/location/${post.image}`"
         :alt="post.title"
         :title="post.title"

@@ -72,6 +72,7 @@ export default {
       {
         src: "https://www.googletagmanager.com/gtag/js?id=G-GDBWZXY0BG",
         async: true,
+        defer: true,
         body: true,
       },
       {

@@ -19,6 +19,8 @@
       </div>
       <div class="w-full lg:w-1/2">
         <img
+          loading="lazy"
+          decoding="async"
           class="w-full max-h-[500px]"
           src="/images/about.svg"
           alt="cholozai"

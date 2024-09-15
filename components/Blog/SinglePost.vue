@@ -9,6 +9,8 @@
         :title="post.title"
       >
         <img
+          loading="lazy"
+          decoding="async"
           :src="`/images/location/${post.image}`"
           :alt="post.title"
           :title="post.title"

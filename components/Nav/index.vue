@@ -9,6 +9,8 @@
         title="cholozai"
       >
         <img
+          loading="lazy"
+          decoding="async"
           alt="Logo"
           title="Logo"
           class="w-[160px] h-[65px]"
@@ -115,6 +117,8 @@
         >
           <nuxt-link :to="{ name: 'index' }" title="cholozai">
             <img
+              loading="lazy"
+              decoding="async"
               alt="Logo"
               title="Logo"
               class="w-[160px] h-[65px]"

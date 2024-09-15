@@ -5,6 +5,8 @@
     >
       <div class="w-screen h-dvh absolute top-0 left-0">
         <img
+          loading="lazy"
+          decoding="async"
           src="/bg.webp"
           alt="Hero background image Cholozai.com"
           title="Hero background image Cholozai.com"
