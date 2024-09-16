@@ -54,5 +54,37 @@
   {
     "url": "/blog/post/sadarghat_w",
     "redirectUrl": "/location/sadarghat-dhaka"
+  },
+  {
+    "url": "/blog/post/bahadur_shah_park_v",
+    "redirectUrl": "/location/bahadur-shah-park-dhaka"
+  },
+  {
+    "url": "/blog/post/billy_n",
+    "redirectUrl": "/location/lal-shapla-bill"
+  },
+  {
+    "url": "/blog/post/hunting_e",
+    "redirectUrl": "/location/otter-fishing-in-narail-bangladesh"
+  },
+  {
+    "url": "/blog/post/bangkok_l",
+    "redirectUrl": "/location/bangkok-thailand"
+  },
+  {
+    "url": "/blog/post/dhanuka_mansa_home_w",
+    "redirectUrl": "/location/dhanuka-manasha-bari-shariatpur"
+  },
+  {
+    "url": "/blog/post/panam_nagar",
+    "redirectUrl": "/location/panam-city"
+  },
+  {
+    "url": "/blog/post/nahar_garden_picnic_spot_v",
+    "redirectUrl": "/location/nahar-garden-picnic-spot-manikganj"
+  },
+  {
+    "url": "/blog/post/sand_q",
+    "redirectUrl": "/location/sandwip"
   }
 ]

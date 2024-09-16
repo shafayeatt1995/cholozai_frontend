@@ -57,14 +57,36 @@
       "destination": "/location/sadarghat-dhaka"
     },
     {
-      "source": "/blog/post/:slug",
-      "destination": "/location/:slug",
-      "permanent": true
+      "source": "/blog/post/bahadur_shah_park_v",
+      "destination": "/location/bahadur-shah-park-dhaka"
     },
     {
-      "source": "/blog/page/:page",
-      "destination": "/location/page/:page",
-      "permanent": true
+      "source": "/blog/post/billy_n",
+      "destination": "/location/lal-shapla-bill"
+    },
+    {
+      "source": "/blog/post/hunting_e",
+      "destination": "/location/otter-fishing-in-narail-bangladesh"
+    },
+    {
+      "source": "/blog/post/bangkok_l",
+      "destination": "/location/bangkok-thailand"
+    },
+    {
+      "source": "/blog/post/dhanuka_mansa_home_w",
+      "destination": "/location/dhanuka-manasha-bari-shariatpur"
+    },
+    {
+      "source": "/blog/post/panam_nagar",
+      "destination": "/location/panam-city"
+    },
+    {
+      "source": "/blog/post/nahar_garden_picnic_spot_v",
+      "destination": "/location/nahar-garden-picnic-spot-manikganj"
+    },
+    {
+      "source": "/blog/post/sand_q",
+      "destination": "/location/sandwip"
     }
   ]
 }
