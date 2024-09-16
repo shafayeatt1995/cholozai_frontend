@@ -8,6 +8,7 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "google-adsense-account", content: "ca-pub-4198613489910321" },
+      { name: "yandex-verification", content: "7a242d0c4c417d99" },
       {
         name: "google-site-verification",
         content: "mfkpXWF7Li7GQaM0sHoymIiieIEARIXGCfddV5jtGnY",
