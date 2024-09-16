@@ -4,7 +4,7 @@
       class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10"
       v-if="posts && posts.length"
     >
-      <BlogSinglePost
+      <LocationSinglePost
         v-for="(post, key) in posts"
         :key="key + 'i'"
         :post="post"
@@ -12,7 +12,7 @@
     </div>
     <div v-else class="w-full flex flex-col justify-center items-center">
       <div ref="empty" class="h-96"></div>
-      <h1 class="text-3xl font-bold">No Blog post found</h1>
+      <h1 class="text-3xl font-bold">No location post found</h1>
     </div>
     <div
       class="mt-10 flex items-center justify-center"
@@ -28,9 +28,8 @@
 import axios from "axios";
 import { initLottie, meta } from "@/utils";
 export default {
-  name: "BlogPage",
   head() {
-    const title = `Blog - Page ${this.page} | ${this.$pageTitle}`;
+    const title = `Location - Page ${this.page} | ${this.$pageTitle}`;
     const description = `Explore a diverse range of travel information on CholoZai. From travel tips and destination guides to cultural insights. page number ${this.page}.`;
 
     return {

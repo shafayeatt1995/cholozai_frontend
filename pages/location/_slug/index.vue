@@ -105,7 +105,7 @@
       <div class="lg:w-80">
         <h2 class="md:text-4xl text-3xl font-bold mb-3">Related Post</h2>
         <div class="grid md:grid-cols-3 lg:grid-cols-1 gap-5 lg:gap-10">
-          <BlogSinglePost
+          <LocationSinglePost
             v-for="(post, key) in related"
             :key="key + 'i'"
             :post="post"
@@ -121,12 +121,11 @@ import axios from "axios";
 import { mapGetters } from "vuex";
 import { meta } from "@/utils";
 export default {
-  name: "BlogPost",
   head() {
     const title = `${this.post.title} | ${this.$pageTitle}`;
     const description =
       `${this.post?.content[0]?.content[0]?.slice(0, 150)}...` ||
-      "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
+      "Discover the beauty of Bangladesh with CholoZai. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
     const mainEntity = this.post.content
       .filter(({ title }) => title && title.length)
       .map(({ title, content }) => ({

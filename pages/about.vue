@@ -71,7 +71,7 @@ export default {
         },
         {
           title: `What We Do`,
-          body: `Cholozai.com is a blog dedicated to providing detailed information on Bangladesh's top tourist destinations, hidden gems, cultural festivals, and local cuisine. We cover everything from practical travel tips to in-depth guides on must-see places. Our content is carefully crafted to ensure that you have all the information you need to make the most of your trip to Bangladesh.`,
+          body: `Cholozai.com is a travel dedicated to providing detailed information on Bangladesh's top tourist destinations, hidden gems, cultural festivals, and local cuisine. We cover everything from practical travel tips to in-depth guides on must-see places. Our content is carefully crafted to ensure that you have all the information you need to make the most of your trip to Bangladesh.`,
           subs: [
             {
               title: `Comprehensive Travel Guides`,
@@ -111,7 +111,7 @@ export default {
         },
         {
           title: `Our Vision`,
-          body: `Our vision is to become the leading travel blog for Bangladesh, helping millions of travelers discover the beauty and culture of this amazing country. We aim to create a community of travel enthusiasts who share our love for Bangladesh and inspire others to explore it.`,
+          body: `Our vision is to become the leading travel information website for Bangladesh, helping millions of travelers discover the beauty and culture of this amazing country. We aim to create a community of travel enthusiasts who share our love for Bangladesh and inspire others to explore it.`,
         },
         {
           title: `How You Can Get Involved`,

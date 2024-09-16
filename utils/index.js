@@ -200,7 +200,7 @@ export function fullDateFormat(date = new Date()) {
 
 export function meta({
   title = "CholoZai - Your Ultimate Guide to Travel in Bangladesh",
-  description = "Discover the beauty of Bangladesh with our travel blog. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
+  description = "Discover the beauty of Bangladesh with CholoZai. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.",
 } = {}) {
   return [
     { name: "description", content: description },

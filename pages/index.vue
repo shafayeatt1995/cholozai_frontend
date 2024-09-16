@@ -49,7 +49,7 @@
       <div
         class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10 px-2"
       >
-        <BlogSinglePost
+        <LocationSinglePost
           v-for="(post, key) in posts"
           :key="key + 'i'"
           :post="post"

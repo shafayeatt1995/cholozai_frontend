@@ -45,7 +45,7 @@ import { meta } from "~/utils";
 
 export default {
   head() {
-    const title = `Ultimate Travel Guide - ${this.$pageTitle}`;
+    const title = `Ultimate Tour Guide - ${this.$pageTitle}`;
     const description =
       "Discover top travel destinations, tips, and guides at Cholozai. Plan your next adventure with expert insights and comprehensive travel information for any location.";
     return {
