@@ -10,6 +10,10 @@
         class="object-cover md:w-2/3"
       />
     </div>
+    <form class="flex my-5 gap-5" v-if="isDev" @submit.prevent="uploadImage">
+      <input class="border rounded-md flex-1" v-model="imageURL" />
+      <Button>Upload</Button>
+    </form>
 
     <div class="flex flex-col lg:flex-row gap-5 md:gap-10">
       <div class="flex-1">
@@ -232,6 +236,7 @@ export default {
       related: {},
       division: {},
       title: "",
+      imageURL: "",
     };
   },
   computed: {
@@ -273,6 +278,14 @@ export default {
     },
     deleteContent(i) {
       this.post.content.splice(i, 1);
+    },
+    async uploadImage() {
+      try {
+        await this.$axios.$post(`${this.$api}/scrap/upload/image`, {
+          url: this.imageURL,
+          post: this.post,
+        });
+      } catch (error) {}
     },
   },
 };
