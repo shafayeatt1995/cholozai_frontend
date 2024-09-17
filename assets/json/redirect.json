@@ -114,5 +114,13 @@
   {
     "source": "/blog/post/burj_khalifa_4",
     "destination": "/location/burj-khalifa-dubai"
+  },
+  {
+    "source": "/blog/post/rabindranath_tagore_8",
+    "destination": "/"
+  },
+  {
+    "source": "/blog/post/neverland_i",
+    "destination": "/location/neverland-dhaka"
   }
 ]
