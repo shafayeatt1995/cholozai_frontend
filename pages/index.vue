@@ -14,20 +14,8 @@
           format="webp"
           quality="50"
           width="1920"
-          :sizes="{
-            xs: 640, // Mobile width
-            sm: 768, // Tablet width
-            md: 1024, // Small desktop width
-            lg: 1280, // Large desktop width
-            xl: 1920, // Extra large desktop width
-          }"
-          :height="{
-            xs: 360, // Mobile height
-            sm: 480, // Tablet height
-            md: 720, // Small desktop height
-            lg: 960, // Large desktop height
-            xl: 1080, // Extra large desktop height
-          }"
+          height="1080"
+          :sizes="{ xs: 640, sm: 768, md: 1024, lg: 1280, xl: 1920 }"
         />
       </div>
       <div class="absolute bg-gray-900/20 h-full w-full top-0 left-0"></div>
@@ -35,17 +23,15 @@
         <div
           class="flex lg:justify-between items-center h-full flex-col lg:flex-row"
         >
-          <div class="flex-1 flex flex-col justify-center px-2 md:px-0">
+          <div class="w-2/3 flex flex-col justify-center px-2 md:px-0">
             <h1
-              class="font-black lg:text-5xl 2xl:text-7xl md:text-4xl text-2xl text-white mt-5 relative text-center"
+              class="font-black lg:text-5xl 2xl:text-7xl md:text-4xl text-2xl text-white mt-5 relative"
             >
-              Discover Every Destination in Bangladesh.
-              <br />
-              A Complete Travel Guide
+              Discover Every Destination in Bangladesh. A Complete Travel Guide
               <span class="font-bold">Cholozai.com</span>
             </h1>
             <p
-              class="lg:text-xl text-sm text-white font-semibold md:mt-8 mt-4 text-center px-2"
+              class="lg:text-xl text-sm text-white font-semibold md:mt-8 mt-4 px-2"
             >
               Discover the beauty, history, and culture of Bangladesh with
               detailed guides to every corner of the country. Explore every

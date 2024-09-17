@@ -5,7 +5,7 @@
       <div
         class="flex pt-5 lg:pt-8 justify-between items-center gap-3 flex-col lg:flex-row"
       >
-        <div class="w-full flex justify-between">
+        <div class="w-full flex justify-between flex-col-reverse md:flex-row">
           <div class="flex items-center gap-3 justify-center lg:justify-start">
             <nuxt-link :to="{ name: 'terms-and-conditions' }"
               >Terms & condition</nuxt-link
@@ -15,7 +15,7 @@
             >
             <nuxt-link :to="{ name: 'contact' }">Contact us</nuxt-link>
           </div>
-          <div class="lg:hidden">
+          <div class="lg:hidden flex justify-center">
             <DarkMode />
           </div>
         </div>

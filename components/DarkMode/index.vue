@@ -71,7 +71,7 @@ export default {
   background: linear-gradient(to top right, #ff0080, #ff8c00);
   border-radius: 50%;
   transition: transform 0.3s, background-color 0.3s;
-  left: 0.3em;
+  left: 0.05em;
   top: 50%;
   transform: translateY(-50%);
 }

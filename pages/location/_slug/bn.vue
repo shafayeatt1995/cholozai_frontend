@@ -185,7 +185,7 @@ export default {
         {
           rel: "alternate",
           href: `${(this.baseUrl + this.$route.path).slice(0, -3)}`,
-          hreflang: "en",
+          hreflang: "en-us",
         },
       ],
       script: [

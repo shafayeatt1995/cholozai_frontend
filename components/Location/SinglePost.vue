@@ -1,7 +1,7 @@
 <template>
   <div class="group">
     <div
-      class="overflow-hidden rounded-md bg-gray-100 transition-all duration-200 hover:scale-105 dark:bg-gray-800"
+      class="overflow-hidden rounded-xl bg-gray-100 transition-all duration-200 hover:scale-105 dark:bg-gray-800"
     >
       <nuxt-link
         class="relative block aspect-video"
@@ -35,8 +35,11 @@
           >
         </nuxt-link>
       </h2>
+      <p class="pb-4 leading-tight mt-2">
+        {{ post.content[0].content.join(" ").slice(0, 100) }} ...
+      </p>
       <div
-        class="my-1 flex items-center text-gray-500 dark:text-gray-400 gap-2"
+        class="mt-2 flex items-center text-gray-500 dark:text-gray-400 gap-2"
       >
         <p class="flex items-center gap-1">
           <span class="truncate text-sm">Shafayet Al-Anik</span>
