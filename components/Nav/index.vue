@@ -29,7 +29,7 @@
         </button>
       </nuxt-link>
       <div
-        class="flex flex-col md:flex-row justify-between items-center flex-nowrap md:gap-5 lg:gap-10"
+        class="flex flex-col md:flex-row justify-between items-center flex-nowrap md:gap-5 lg:gap-10 absolute md:relative dark:bg-gray-900/50 md:dark:bg-transparent bg-white/50 md:bg-transparent backdrop-blur-md md:backdrop-blur-none w-full md:w-auto mt-1 md:mt-0"
       >
         <div
           class="order-1 w-full md:items-center justify-start md:order-none md:flex flex-col md:flex-row md:w-auto md:flex-1 md:justify-end"
@@ -181,6 +181,7 @@ export default {
   watch: {
     $route() {
       this.show = "";
+      this.showMenu = false;
     },
   },
 };

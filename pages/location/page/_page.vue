@@ -1,26 +1,29 @@
 <template>
-  <div class="container mx-auto">
-    <div
-      class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10"
-      v-if="posts && posts.length"
-    >
-      <LocationSinglePost
-        v-for="(post, key) in posts"
-        :key="key + 'i'"
-        :post="post"
-      />
+  <div>
+    <PageName> All Locations </PageName>
+    <div class="container mx-auto">
+      <div
+        class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-10"
+        v-if="posts && posts.length"
+      >
+        <LocationSinglePost
+          v-for="(post, key) in posts"
+          :key="key + 'i'"
+          :post="post"
+        />
+      </div>
+      <div v-else class="w-full flex flex-col justify-center items-center">
+        <div ref="empty" class="h-96"></div>
+        <h1 class="text-3xl font-bold">No location post found</h1>
+      </div>
+      <div
+        class="mt-10 flex items-center justify-center"
+        v-if="posts && posts.length"
+      >
+        <Paginate :posts="posts" />
+      </div>
+      <div v-else class="flex justify-center items-center"></div>
     </div>
-    <div v-else class="w-full flex flex-col justify-center items-center">
-      <div ref="empty" class="h-96"></div>
-      <h1 class="text-3xl font-bold">No location post found</h1>
-    </div>
-    <div
-      class="mt-10 flex items-center justify-center"
-      v-if="posts && posts.length"
-    >
-      <Paginate :posts="posts" />
-    </div>
-    <div v-else class="flex justify-center items-center"></div>
   </div>
 </template>
 

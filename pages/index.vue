@@ -21,9 +21,9 @@
       <div class="absolute bg-gray-900/20 h-full w-full top-0 left-0"></div>
       <div class="container mx-auto relative z-10 h-full">
         <div
-          class="flex lg:justify-between items-center h-full flex-col lg:flex-row"
+          class="flex justify-center lg:justify-between items-center h-full flex-col lg:flex-row"
         >
-          <div class="w-2/3 flex flex-col justify-center px-2 md:px-0">
+          <div class="lg:w-2/3 flex flex-col justify-center px-2 md:px-0">
             <h1
               class="font-black lg:text-5xl 2xl:text-7xl md:text-4xl text-2xl text-white mt-5 relative"
             >
