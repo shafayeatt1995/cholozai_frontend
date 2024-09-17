@@ -26,13 +26,14 @@
       </div>
 
       <div class="relative w-full mt-12 lg:w-1/2 lg:mt-0" ref="error">
-        <img
+        <nuxt-img
           loading="lazy"
           decoding="async"
           src="/images/404.svg"
           class="object-contain w-full"
           alt="404 page not found"
           title="404 page not found"
+          fit="cover"
         />
       </div>
     </div>

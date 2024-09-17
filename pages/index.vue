@@ -4,13 +4,30 @@
       class="h-dvh bg-cover bg-center relative -mt-[81px] overflow-x-hidden"
     >
       <div class="w-screen h-dvh absolute top-0 left-0">
-        <img
+        <nuxt-img
           loading="lazy"
           decoding="async"
-          src="/bg.webp"
+          src="/hero-background.webp"
           alt="Hero background image Cholozai.com"
           title="Hero background image Cholozai.com"
           class="object-cover inset-0 w-full h-full"
+          format="webp"
+          quality="50"
+          width="1920"
+          :sizes="{
+            xs: 640, // Mobile width
+            sm: 768, // Tablet width
+            md: 1024, // Small desktop width
+            lg: 1280, // Large desktop width
+            xl: 1920, // Extra large desktop width
+          }"
+          :height="{
+            xs: 360, // Mobile height
+            sm: 480, // Tablet height
+            md: 720, // Small desktop height
+            lg: 960, // Large desktop height
+            xl: 1080, // Extra large desktop height
+          }"
         />
       </div>
       <div class="absolute bg-gray-900/20 h-full w-full top-0 left-0"></div>

@@ -110,6 +110,7 @@ export default {
 
   image: {
     provider: "static",
+    staticFilename: "images/[name][ext]",
     screens: {
       xs: 320,
       sm: 640,

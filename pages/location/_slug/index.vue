@@ -1,13 +1,14 @@
 <template>
   <div class="container mx-auto">
     <div class="flex justify-center mb-10">
-      <img
+      <nuxt-img
         loading="lazy"
         decoding="async"
         :src="`/images/location/${post.image}`"
         :alt="post.title"
         :title="post.title"
         class="object-cover md:w-2/3"
+        format="webp"
       />
     </div>
     <form class="flex my-5 gap-5" v-if="isDev" @submit.prevent="uploadImage">

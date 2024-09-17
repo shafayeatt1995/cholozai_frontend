@@ -17,14 +17,16 @@
           your go-to destination for all things related to Bangladesh tourism.
         </p>
       </div>
-      <div class="w-full lg:w-1/2">
-        <img
+      <div class="w-full lg:w-1/2 flex justify-center">
+        <nuxt-img
           loading="lazy"
           decoding="async"
-          class="w-full max-h-[500px]"
+          class="w-auto max-h-[500px]"
           src="/images/about.svg"
           alt="cholozai"
           title="cholozai"
+          format="webp"
+          height="500"
         />
       </div>
     </div>

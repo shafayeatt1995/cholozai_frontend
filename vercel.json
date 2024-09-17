@@ -87,6 +87,34 @@
     {
       "source": "/blog/post/sand_q",
       "destination": "/location/sandwip"
+    },
+    {
+      "source": "/blog/post/moinot-ghat-dhaka",
+      "destination": "/location/moinot-ghat-dhaka"
+    },
+    {
+      "source": "/blog/post/lake_view_island_g",
+      "destination": "/location/lake-view-island-kaptai"
+    },
+    {
+      "source": "/blog/post/hazrat_shahjalal_r_shrine",
+      "destination": "/location/hazrat-shahjalal-mazar"
+    },
+    {
+      "source": "/blog/post/khan-jahan-ali-bridge-khulna",
+      "destination": "/location/khan-jahan-ali-bridge-khulna"
+    },
+    {
+      "source": "/blog/post/garden_s",
+      "destination": "/location/botanical-garden-dhaka"
+    },
+    {
+      "source": "/blog/post/nikli_haor",
+      "destination": "/location/nikli-haor-kishoreganj"
+    },
+    {
+      "source": "/blog/post/burj_khalifa_4",
+      "destination": "/location/burj-khalifa-dubai"
     }
   ]
 }
