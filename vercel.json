@@ -123,6 +123,18 @@
     {
       "source": "/blog/post/neverland_i",
       "destination": "/location/neverland-dhaka"
+    },
+    {
+      "source": "/blog/post/kalagachia-eco-tourism-park",
+      "destination": "/location/kalagachia-eco-tourism-park"
+    },
+    {
+      "source": "/blog/post/noakhali_district_jame_mosque_u",
+      "destination": "/location/noakhali-zilla-jame-mosque"
+    },
+    {
+      "source": "/blog/post/noakhali-zilla-jame-mosque",
+      "destination": "/location/noakhali-zilla-jame-mosque"
     }
   ]
 }

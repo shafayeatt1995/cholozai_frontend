@@ -1,126 +1,140 @@
-[
-  {
-    "source": "/blog/post/musa_khan_mosque_i",
-    "destination": "/location/musa-khan-mosque-dhaka"
-  },
-  {
-    "source": "/blog/post/three_leaders_2",
-    "destination": "/location/the-mausoleum-of-three-leaders"
-  },
-  {
-    "source": "/blog/post/unbeatable_n",
-    "destination": "/"
-  },
-  {
-    "source": "/blog/post/bark",
-    "destination": "/location/sadarghat-dhaka"
-  },
-  {
-    "source": "/blog/page/36",
-    "destination": "/location/page/9"
-  },
-  {
-    "source": "/blog/post/botanical_garden_mymensingh_k",
-    "destination": "/location/botanical-garden-mymensingh"
-  },
-  {
-    "source": "/blog/post/petrail_mosque_0",
-    "destination": "/location/pathrail-mosque-faridpur"
-  },
-  {
-    "source": "/blog/post/rack_2",
-    "destination": "/"
-  },
-  {
-    "source": "/blog/post/puthia_rajbari",
-    "destination": "/location/puthia-rajbari-rajshahi"
-  },
-  {
-    "source": "/blog/post/liberation_war_museum_5",
-    "destination": "/location/liberation-war-museum-dhaka"
-  },
-  {
-    "source": "/blog/post/paharpur_buddhist_monastery",
-    "destination": "/location/paharpur-buddhist-bihar"
-  },
-  {
-    "source": "/blog/post/bashundhara_j",
-    "destination": "/location/bashundhara-city-dhaka"
-  },
-  {
-    "source": "/blog/post/baitul_mukarram_mosque_6",
-    "destination": "/location/baitul-mukarram-national-mosque-dhaka"
-  },
-  {
-    "source": "/blog/post/sadarghat_w",
-    "destination": "/location/sadarghat-dhaka"
-  },
-  {
-    "source": "/blog/post/bahadur_shah_park_v",
-    "destination": "/location/bahadur-shah-park-dhaka"
-  },
-  {
-    "source": "/blog/post/billy_n",
-    "destination": "/location/lal-shapla-bill"
-  },
-  {
-    "source": "/blog/post/hunting_e",
-    "destination": "/location/otter-fishing-in-narail-bangladesh"
-  },
-  {
-    "source": "/blog/post/bangkok_l",
-    "destination": "/location/bangkok-thailand"
-  },
-  {
-    "source": "/blog/post/dhanuka_mansa_home_w",
-    "destination": "/location/dhanuka-manasha-bari-shariatpur"
-  },
-  {
-    "source": "/blog/post/panam_nagar",
-    "destination": "/location/panam-city"
-  },
-  {
-    "source": "/blog/post/nahar_garden_picnic_spot_v",
-    "destination": "/location/nahar-garden-picnic-spot-manikganj"
-  },
-  {
-    "source": "/blog/post/sand_q",
-    "destination": "/location/sandwip"
-  },
-  {
-    "source": "/blog/post/moinot-ghat-dhaka",
-    "destination": "/location/moinot-ghat-dhaka"
-  },
-  {
-    "source": "/blog/post/lake_view_island_g",
-    "destination": "/location/lake-view-island-kaptai"
-  },
-  {
-    "source": "/blog/post/hazrat_shahjalal_r_shrine",
-    "destination": "/location/hazrat-shahjalal-mazar"
-  },
-  {
-    "source": "/blog/post/khan-jahan-ali-bridge-khulna",
-    "destination": "/location/khan-jahan-ali-bridge-khulna"
-  },
-  {
-    "source": "/blog/post/garden_s",
-    "destination": "/location/botanical-garden-dhaka"
-  },
-  {
-    "source": "/blog/post/nikli_haor",
-    "destination": "/location/nikli-haor-kishoreganj"
-  },
-  {
-    "source": "/blog/post/burj_khalifa_4",
-    "destination": "/location/burj-khalifa-dubai"
-  },
-  {
-    "source": "/blog/post/rabindranath_tagore_8",
-    "destination": "/"
-  },
-  {
-    "source": "/blog/post/neverland_i",
-    "destination": "/location/neverland-dhaka"
-  }
-]
+{
+  "redirects": [
+    {
+      "source": "/blog/post/musa_khan_mosque_i",
+      "destination": "/location/musa-khan-mosque-dhaka"
+    },
+    {
+      "source": "/blog/post/three_leaders_2",
+      "destination": "/location/the-mausoleum-of-three-leaders"
+    },
+    {
+      "source": "/blog/post/unbeatable_n",
+      "destination": "/"
+    },
+    {
+      "source": "/blog/post/bark",
+      "destination": "/location/sadarghat-dhaka"
+    },
+    {
+      "source": "/blog/page/36",
+      "destination": "/location/page/9"
+    },
+    {
+      "source": "/blog/post/botanical_garden_mymensingh_k",
+      "destination": "/location/botanical-garden-mymensingh"
+    },
+    {
+      "source": "/blog/post/petrail_mosque_0",
+      "destination": "/location/pathrail-mosque-faridpur"
+    },
+    {
+      "source": "/blog/post/rack_2",
+      "destination": "/"
+    },
+    {
+      "source": "/blog/post/puthia_rajbari",
+      "destination": "/location/puthia-rajbari-rajshahi"
+    },
+    {
+      "source": "/blog/post/liberation_war_museum_5",
+      "destination": "/location/liberation-war-museum-dhaka"
+    },
+    {
+      "source": "/blog/post/paharpur_buddhist_monastery",
+      "destination": "/location/paharpur-buddhist-bihar"
+    },
+    {
+      "source": "/blog/post/bashundhara_j",
+      "destination": "/location/bashundhara-city-dhaka"
+    },
+    {
+      "source": "/blog/post/baitul_mukarram_mosque_6",
+      "destination": "/location/baitul-mukarram-national-mosque-dhaka"
+    },
+    {
+      "source": "/blog/post/sadarghat_w",
+      "destination": "/location/sadarghat-dhaka"
+    },
+    {
+      "source": "/blog/post/bahadur_shah_park_v",
+      "destination": "/location/bahadur-shah-park-dhaka"
+    },
+    {
+      "source": "/blog/post/billy_n",
+      "destination": "/location/lal-shapla-bill"
+    },
+    {
+      "source": "/blog/post/hunting_e",
+      "destination": "/location/otter-fishing-in-narail-bangladesh"
+    },
+    {
+      "source": "/blog/post/bangkok_l",
+      "destination": "/location/bangkok-thailand"
+    },
+    {
+      "source": "/blog/post/dhanuka_mansa_home_w",
+      "destination": "/location/dhanuka-manasha-bari-shariatpur"
+    },
+    {
+      "source": "/blog/post/panam_nagar",
+      "destination": "/location/panam-city"
+    },
+    {
+      "source": "/blog/post/nahar_garden_picnic_spot_v",
+      "destination": "/location/nahar-garden-picnic-spot-manikganj"
+    },
+    {
+      "source": "/blog/post/sand_q",
+      "destination": "/location/sandwip"
+    },
+    {
+      "source": "/blog/post/moinot-ghat-dhaka",
+      "destination": "/location/moinot-ghat-dhaka"
+    },
+    {
+      "source": "/blog/post/lake_view_island_g",
+      "destination": "/location/lake-view-island-kaptai"
+    },
+    {
+      "source": "/blog/post/hazrat_shahjalal_r_shrine",
+      "destination": "/location/hazrat-shahjalal-mazar"
+    },
+    {
+      "source": "/blog/post/khan-jahan-ali-bridge-khulna",
+      "destination": "/location/khan-jahan-ali-bridge-khulna"
+    },
+    {
+      "source": "/blog/post/garden_s",
+      "destination": "/location/botanical-garden-dhaka"
+    },
+    {
+      "source": "/blog/post/nikli_haor",
+      "destination": "/location/nikli-haor-kishoreganj"
+    },
+    {
+      "source": "/blog/post/burj_khalifa_4",
+      "destination": "/location/burj-khalifa-dubai"
+    },
+    {
+      "source": "/blog/post/rabindranath_tagore_8",
+      "destination": "/"
+    },
+    {
+      "source": "/blog/post/neverland_i",
+      "destination": "/location/neverland-dhaka"
+    },
+    {
+      "source": "/blog/post/kalagachia-eco-tourism-park",
+      "destination": "/location/kalagachia-eco-tourism-park"
+    },
+    {
+      "source": "/blog/post/noakhali_district_jame_mosque_u",
+      "destination": "/location/noakhali-zilla-jame-mosque"
+    },
+    {
+      "source": "/blog/post/noakhali-zilla-jame-mosque",
+      "destination": "/location/noakhali-zilla-jame-mosque"
+    }
+  ]
+}
