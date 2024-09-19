@@ -11,6 +11,64 @@
         format="webp"
       />
     </div>
+    <form class="flex my-5 gap-5" v-if="isDev" @submit.prevent="uploadImage">
+      <input
+        class="border rounded-md flex-1"
+        v-model="imageURL"
+        placeholder="Upload image url"
+      />
+      <Button>Upload</Button>
+    </form>
+    <div class="flex flex-col my-5 gap-5" v-if="isDev">
+      <form class="flex gap-5" @submit.prevent="addText">
+        <input
+          class="border rounded-md flex-1"
+          v-model="text"
+          placeholder="Replace text"
+        />
+        <Button type="submit">add</Button>
+      </form>
+      <div v-if="texts && texts.length">
+        <p
+          v-for="(t, i) in texts"
+          :key="i"
+          @click="texts.splice(i, 1)"
+          class="cursor-pointer"
+        >
+          {{ i + 1 }}. {{ t }}
+        </p>
+      </div>
+      <template v-if="convert && convert.length">
+        <div v-for="(t, i) in convert" :key="'g' + i" class="mb-4">
+          <p>{{ i + 1 }}</p>
+          <p>text: {{ t.text }}</p>
+          <p>Generate: {{ t.generate }}</p>
+        </div>
+      </template>
+      <p v-if="addError" class="bg-rose-50 text-rose-600 px-3">
+        Can't add because this text isn't exist in this page
+      </p>
+      <div class="flex gap-10">
+        <Button @click.native.prevent="copyPage" v-if="isDev" class="w-full"
+          >Copy full page</Button
+        >
+        <Button
+          @click.native.prevent="reload()"
+          class="w-full"
+          v-if="convert && convert.length"
+        >
+          verify
+        </Button>
+        <Button
+          v-else
+          @click.native.prevent="replace"
+          class="w-full"
+          :loading="replaceLoading"
+        >
+          Replace
+        </Button>
+      </div>
+    </div>
 
     <div class="flex flex-col lg:flex-row gap-5 md:gap-10">
       <div class="flex-1">
@@ -23,7 +81,7 @@
           </h1>
 
           <nuxt-link
-            class="text-sm font-semibold uppercase text-blue-600 mt-2"
+            class="text-sm font-semibold uppercase text-blue-600"
             :to="{
               name: 'district-name-page',
               params: { name: post.district, page: 1 },
@@ -35,7 +93,7 @@
         </div>
         <div class="flex items-center justify-between gap-2 mb-7">
           <div class="flex items-center text-sm gap-2">
-            <p class="text-gray-800 dark:text-gray-400">শাফায়েত আল-অনিক</p>
+            <p class="text-gray-800 dark:text-gray-400">Shafayet Al-Anik</p>
             ·
             <p class="truncate text-sm">{{ post.postDate | cDate("bn") }}</p>
           </div>
@@ -73,7 +131,7 @@
           </div>
           <h2
             v-if="content.title"
-            class="text-2xl font-bold mb-2 tracking-tight"
+            class="text-2xl font-bold mb-2 tracking-tight capitalize"
           >
             <EditMode v-model="content.title" />
           </h2>
@@ -127,7 +185,7 @@ export default {
     const description =
       `${this.post?.bnContent[0]?.content[0]?.slice(0, 150)}...` ||
       "Discover the beauty of Bangladesh with CholoZai. Explore top destinations, hidden gems, cultural experiences, and travel tips for an unforgettable journey through this vibrant country.";
-    const mainEntity = this.post.bnContent
+    const mainEntity = this.post.content
       .filter(({ title }) => title && title.length)
       .map(({ title, content }) => ({
         "@type": "Question",
@@ -137,6 +195,7 @@ export default {
           text: content.join(" "),
         },
       }));
+
     let position = 1;
 
     const breadcrumbList = {
@@ -184,8 +243,8 @@ export default {
       link: [
         {
           rel: "alternate",
-          href: `${(this.baseUrl + this.$route.path).slice(0, -3)}`,
-          hreflang: "en-us",
+          href: `${this.baseUrl + this.$route.path}/bn`,
+          hreflang: "bn-BD",
         },
       ],
       script: [
@@ -232,6 +291,13 @@ export default {
       related: {},
       division: {},
       title: "",
+      imageURL: "",
+      convert: [],
+      texts: [],
+      text: "",
+      click: true,
+      addError: false,
+      replaceLoading: false,
     };
   },
   computed: {
@@ -240,6 +306,19 @@ export default {
   methods: {
     copyText(text) {
       navigator.clipboard.writeText(text);
+    },
+    async copyPage() {
+      try {
+        const content = `${this.post.title}\n${
+          this.post.district
+        }\n${this.post.bnContent
+          .map((item) => `${item.title}\n${item.content.join("\n\n")}`)
+          .join("\n\n")}`;
+
+        await navigator.clipboard.writeText(content);
+      } catch (err) {
+        console.error("Failed to copy text:", err);
+      }
     },
     async paste() {
       this.title = await navigator.clipboard.readText();
@@ -275,6 +354,66 @@ export default {
     },
     deleteContent(i) {
       this.post.content.splice(i, 1);
+    },
+    async uploadImage() {
+      if (this.click) {
+        try {
+          this.click = false;
+          await this.$axios.$post(`${this.$api}/scrap/upload/image`, {
+            url: this.imageURL,
+            post: this.post,
+          });
+        } catch (error) {
+        } finally {
+          this.click = true;
+        }
+      }
+    },
+    async replace() {
+      if (this.click) {
+        try {
+          this.click = false;
+          this.replaceLoading = true;
+          this.generate = [];
+          const { convert } = await this.$axios.$post(
+            `${this.$api}/scrap/replace`,
+            {
+              texts: this.texts,
+              post: this.post,
+            }
+          );
+          this.convert = convert;
+          this.texts = [];
+          this.text = "";
+        } catch (error) {
+          console.log(error);
+        } finally {
+          this.replaceLoading = false;
+          this.click = true;
+        }
+      }
+    },
+    addText() {
+      const regex = new RegExp(this.text, "i");
+
+      if (
+        (this.post.content.some((item) =>
+          item.content.some((contentText) => regex.test(contentText))
+        ) ||
+          this.post.bnContent.some((item) =>
+            item.content.some((contentText) => regex.test(contentText))
+          )) &&
+        !this.texts.includes(this.text)
+      ) {
+        this.texts.push(this.text);
+        this.text = "";
+        this.addError = false;
+      } else {
+        this.addError = true;
+      }
+    },
+    reload() {
+      window.location.reload();
     },
   },
 };
