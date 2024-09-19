@@ -141,7 +141,7 @@
           >
             Introduction to {{ post.title }}
           </h2>
-          <div class="mb-10">
+          <article class="mb-10">
             <div
               v-for="(article, i) in content.content"
               :key="`article-${i}`"
@@ -149,7 +149,7 @@
             >
               <EditMode v-model="content.content[i]" tagName="div" />
             </div>
-          </div>
+          </article>
           <hr v-if="key + 1 !== post.content.length" />
         </div>
         <div class="flex justify-between gap-10" v-if="isDev">
