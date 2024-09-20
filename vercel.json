@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/blog/post/:slug*",
+      "destination": "/location/:slug*",
+      "permanent": true
+    },
+    {
       "source": "/blog/post/musa_khan_mosque_i",
       "destination": "/location/musa-khan-mosque-dhaka"
     },

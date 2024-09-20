@@ -398,16 +398,40 @@ export default {
         }
       }
     },
+    // addText() {
+    //   const regex = new RegExp(this.text, "i");
+
+    //   if (
+    //     (this.post.content.some((item) =>
+    //       item.content.some((contentText) => regex.test(contentText))
+    //     ) ||
+    //       this.post.bnContent.some((item) =>
+    //         item.content.some((contentText) => regex.test(contentText))
+    //       )) &&
+    //     !this.texts.includes(this.text)
+    //   ) {
+    //     this.texts.push(this.text);
+    //     this.text = "";
+    //     this.addError = false;
+    //   } else {
+    //     this.addError = true;
+    //   }
+    // },
     addText() {
-      const regex = new RegExp(this.text, "i");
+      const normalizeText = (text) => text.trim().replace(/\s+/g, " "); // Normalize whitespace and trim
+      const regex = new RegExp(normalizeText(this.text), "i");
+
+      const checkContent = (contentArray) => {
+        return contentArray.some((item) =>
+          item.content.some((contentText) =>
+            regex.test(normalizeText(contentText))
+          )
+        );
+      };
 
       if (
-        (this.post.content.some((item) =>
-          item.content.some((contentText) => regex.test(contentText))
-        ) ||
-          this.post.bnContent.some((item) =>
-            item.content.some((contentText) => regex.test(contentText))
-          )) &&
+        (checkContent(this.post.content) ||
+          checkContent(this.post.bnContent)) &&
         !this.texts.includes(this.text)
       ) {
         this.texts.push(this.text);
