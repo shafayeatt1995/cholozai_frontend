@@ -7,7 +7,7 @@
         :src="`/images/location/${post.image}`"
         :alt="post.title"
         :title="post.title"
-        class="object-cover md:w-2/3"
+        class="object-cover w-full aspect-[16/9] md:w-2/3"
         format="webp"
       />
     </div>
