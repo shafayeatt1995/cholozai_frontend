@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/blog/post/:slug*",
-      "destination": "/location/:slug*",
-      "permanent": true
-    },
-    {
       "source": "/blog/post/musa_khan_mosque_i",
       "destination": "/location/musa-khan-mosque-dhaka"
     },
@@ -140,6 +135,11 @@
     {
       "source": "/blog/post/noakhali-zilla-jame-mosque",
       "destination": "/location/noakhali-zilla-jame-mosque"
+    },
+    {
+      "source": "/blog/post/:slug*",
+      "destination": "/location/:slug*",
+      "permanent": true
     }
   ]
 }
