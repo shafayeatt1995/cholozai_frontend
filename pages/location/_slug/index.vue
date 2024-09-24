@@ -258,6 +258,23 @@ export default {
         },
         {
           type: "application/ld+json",
+          json: {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: title,
+            author: {
+              "@type": "Person",
+              name: "Shafayet Al-Anik",
+            },
+            datePublished: new Date(
+              this.post.postDate || new Date()
+            ).toISOString(),
+            image: `${this.baseUrl}/images/location/${this.post.image}`,
+            description: description,
+          },
+        },
+        {
+          type: "application/ld+json",
           json: breadcrumbList,
         },
       ],
