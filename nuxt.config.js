@@ -1,6 +1,6 @@
 export default {
   target: "static",
-  server: { port: process.env.PORT || 8080 },
+  server: { port: process.env.PORT || 8080, host: "0.0.0.0" },
   generate: { interval: 100, fallback: true },
   head: {
     title: "cholozai",
@@ -24,6 +24,7 @@ export default {
         content: `${process.env.BASE_URL}/og-image.webp`,
       },
       { name: "twitter:card", content: `summary_large_image` },
+      { name: "robots", content: `max-image-preview:large` },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
