@@ -4,7 +4,7 @@
       <nuxt-img
         loading="lazy"
         decoding="async"
-        :src="`/images/location/${post.image}`"
+        :src="imgB64 || `/images/location/${post.image}`"
         :alt="post.title"
         :title="post.title"
         class="object-cover w-full aspect-[16/9] md:w-2/3"
@@ -17,7 +17,13 @@
         v-model="imageURL"
         placeholder="Upload image url"
       />
-      <Button>Upload</Button>
+      <input
+        type="file"
+        accept="img/*"
+        @change="image"
+        placeholder="Upload image url"
+      />
+      <Button :loading="!click">Upload</Button>
     </form>
     <div class="flex flex-col my-5 gap-5" v-if="isDev">
       <form class="flex gap-5" @submit.prevent="addText">
@@ -315,6 +321,7 @@ export default {
       click: true,
       addError: false,
       replaceLoading: false,
+      imgB64: "",
     };
   },
   computed: {
@@ -377,7 +384,10 @@ export default {
           await this.$axios.$post(`${this.$api}/scrap/upload/image`, {
             url: this.imageURL,
             post: this.post,
+            img: this.imgB64,
           });
+          this.imageURL = "";
+          this.imgB64 = "";
         } catch (error) {
         } finally {
           this.click = true;
@@ -430,6 +440,18 @@ export default {
     },
     reload() {
       window.location.reload();
+    },
+    // show Selected image
+    image(event) {
+      if (event.target.files.length > 0) {
+        let file = event.target.files[0];
+        let reader = new FileReader();
+        reader.onloadend = () => {
+          this.imgB64 = reader.result;
+        };
+        reader.readAsDataURL(file);
+        // this.form.logo = file;
+      }
     },
   },
 };
