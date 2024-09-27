@@ -52,7 +52,7 @@
               "
               @click="show = show === 'travel' ? '' : 'travel'"
             >
-              <span>Division of BD</span>
+              <span>Divisions</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <transition name="fade" mode="out-in">
@@ -88,7 +88,7 @@
               "
               @click="show = show === 'district' ? '' : 'district'"
             >
-              <span>District of BD</span>
+              <span>Districts</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <transition name="fade" mode="out-in">
