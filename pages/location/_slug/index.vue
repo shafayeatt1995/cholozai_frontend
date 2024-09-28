@@ -407,7 +407,7 @@ export default {
               post: this.post,
             }
           );
-          location.reload();
+          // location.reload();
           this.convert = convert;
           this.texts = [];
           this.text = "";
