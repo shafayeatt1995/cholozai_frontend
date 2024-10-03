@@ -1,6 +1,9 @@
 export default {
   target: "static",
-  server: { port: process.env.PORT || 8080, host: "0.0.0.0" },
+  server: {
+    port: process.env.PORT || 8080,
+    // host: "0.0.0.0"
+  },
   generate: { interval: 100, fallback: true },
   head: {
     title: "cholozai",
@@ -35,28 +38,12 @@ export default {
         crossorigin: true,
       },
       {
-        rel: "preload",
-        href: "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap",
-        as: "style",
-        onload: "this.onload=null;this.rel='stylesheet'",
-      },
-      {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap",
-        media: "print",
-        onload: "this.media='all'",
-      },
-      {
-        rel: "preload",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-        as: "style",
-        onload: "this.onload=null;this.rel='stylesheet'",
+        href: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap",
       },
       {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
-        media: "print",
-        onload: "this.media='all'",
       },
     ],
     script: [

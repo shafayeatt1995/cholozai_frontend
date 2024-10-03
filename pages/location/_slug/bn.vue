@@ -243,8 +243,12 @@ export default {
       link: [
         {
           rel: "alternate",
+          href: `${this.baseUrl + this.$route.path}`,
+          hreflang: "en-US",
+        },
+        {
+          rel: "canonical",
           href: `${this.baseUrl + this.$route.path}/bn`,
-          hreflang: "bn-BD",
         },
       ],
       script: [
