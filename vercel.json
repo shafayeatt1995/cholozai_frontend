@@ -167,23 +167,23 @@
     },
     {
       "permanent": true,
-      "source": "https://www.cholozai.com/blog/post/mahera_landlord",
-      "destination": "https://www.cholozai.com/location/mohera-jamindar-bari"
+      "source": "/blog/post/mahera_landlord",
+      "destination": "/location/mohera-jamindar-bari"
     },
     {
       "permanent": true,
-      "source": "https://www.cholozai.com/blog/page/24",
-      "destination": "https://www.cholozai.com/location/page/24"
+      "source": "/blog/page/24",
+      "destination": "/location/page/24"
     },
     {
       "permanent": true,
-      "source": "https://www.cholozai.com/blog/page/41",
-      "destination": "https://www.cholozai.com/location/page/41"
+      "source": "/blog/page/41",
+      "destination": "/location/page/41"
     },
     {
       "permanent": true,
-      "source": "https://www.cholozai.com/blog/post/rabindranath_tagore_8",
-      "destination": "https://www.cholozai.com/location/rabindranath-tagore-kuthibari"
+      "source": "/blog/post/rabindranath_tagore_8",
+      "destination": "/location/rabindranath-tagore-kuthibari"
     },
     {
       "permanent": true,
