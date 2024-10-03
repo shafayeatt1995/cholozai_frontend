@@ -334,7 +334,7 @@ export default {
         //   title: this.title,
         //   post: this.post,
         // });
-        // this.title = "";
+        this.title = "";
       } catch (error) {}
     },
     async updatePost() {
