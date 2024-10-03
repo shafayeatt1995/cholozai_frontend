@@ -139,7 +139,7 @@
             v-else-if="key === 0"
             class="text-2xl font-bold mb-2 capitalize tracking-tight"
           >
-            Introduction to {{ post.title }}
+            {{ post.title }} পরিচিতি
           </h2>
           <article class="mb-10">
             <div
